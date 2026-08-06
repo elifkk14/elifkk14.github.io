@@ -1,87 +1,38 @@
-# 🌐 Elif Konak | Personal Portfolio Website
+# Elif Konak — Personal Website
 
-Welcome to the source code of my **personal portfolio website** – a modern, responsive, and professional online presence that highlights my journey as a Computer Engineering student and aspiring software developer.
+Source for **[elifkk14.github.io](https://elifkk14.github.io)** — my personal site and portfolio.
 
-## 📌 Live Preview
+AI/ML Engineer — deep learning for medical imaging, with backend and platform experience.
+Computer Engineering graduate (TED University, 2026), based in Ankara, Türkiye.
 
-🔗 [Visit My Website](https://elifkk14.github.io/elifkonak.github.io/)
+## Stack
 
----
+A deliberately simple, dependency-free single page:
 
-## ✨ About the Website
+- Plain HTML + CSS — no framework, no build step
+- No external CSS/JS/font requests; icons are inline SVG
+- Automatic light/dark theme via `prefers-color-scheme`
+- Responsive single-column layout, ~23 KB total
+- Deployed with GitHub Pages from `main`
 
-This website serves as:
-- A digital **resume** and personal brand
-- A showcase for my **software projects**
-- A space for writing **technical blog posts**
-- A central hub for **networking** and collaboration
+## Structure
 
----
-
-## 🎨 Features
-
-- ✅ **Modern & Responsive UI** (Built with Bootstrap 5)
-- ✅ **Custom CSS Styling** (Animated text, dynamic hover effects)
-- ✅ **Multiple Pages**:  
-  - `index.html`: Home, About Me, Skills  
-  - `projects.html`: Project Portfolio  
-  - `resume.html`: Education, Skills, CV  
-  - `contact.html`: Contact Form & Social Links  
-  - `blog.html`: Personal Blog and Technical Articles
-- ✅ **Dark-theme friendly colors**
-- ✅ **Font Awesome Icons** integration
-- ✅ **JavaScript Animations** for enhanced user experience
-
----
-
-## 🛠️ Tech Stack
-
-| Frontend       | Tools & Libraries       |
-|----------------|--------------------------|
-| HTML5/CSS3     | Bootstrap 5              |
-| JavaScript     | Vanilla JS               |
-| Icons          | Font Awesome             |
-| Deployment     | GitHub Pages             |
-
----
-
-## 📁 Folder Structure
-
-```bash
-📦 root
- ┣ 📄 index.html
- ┣ 📄 projects.html
- ┣ 📄 resume.html
- ┣ 📄 contact.html
- ┣ 📄 blog.html
- ┣ 📄 .gitignore
- ┣ 📄 README.md
- 
+```
+index.html    the entire site
+images/       assets
+README.md
 ```
 
----
+## Local preview
 
-## 📬 Contact
+```bash
+python3 -m http.server 8000
+```
 
-📧 Email: elif.konak@yahoo.com.tr  
-💼 LinkedIn: [linkedin.com/in/elif-konakk](https://linkedin.com/in/elif-konakk)  
-💻 GitHub: [github.com/elifkonak](https://github.com/elifkonak)
+Then open `http://localhost:8000`.
 
----
+## Contact
 
-## 💡 Motivation
-
-I built this site not only to share who I am and what I’ve created, but also to grow as a developer. Maintaining a professional online portfolio pushes me to:
-
-- Document my growth  
-- Communicate effectively  
-- Learn and apply modern web design practices  
-
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
-
-
-
+- Email — [elif.konak@yahoo.com.tr](mailto:elif.konak@yahoo.com.tr)
+- LinkedIn — [in/elif-konakk](https://www.linkedin.com/in/elif-konakk/)
+- GitHub — [@elifkk14](https://github.com/elifkk14)
