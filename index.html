@@ -8,6 +8,15 @@
 <meta property="og:title" content="Elif Konak — AI/ML Engineer" />
 <meta property="og:description" content="Deep learning for medical imaging · AI/ML · Backend. Open to Software / ML Engineer roles." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://elifkk14.github.io/" />
+<meta property="og:image" content="https://elifkk14.github.io/images/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Elif Konak — AI/ML engineer, deep learning for medical imaging" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Elif Konak — AI/ML Engineer" />
+<meta name="twitter:description" content="Deep learning for medical imaging · AI/ML · Backend. Open to Software / ML Engineer roles." />
+<meta name="twitter:image" content="https://elifkk14.github.io/images/og-card.png" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
@@ -210,6 +219,17 @@
     color:var(--fg-faint); margin-bottom:13px;
   }
 
+  /* ---------- project screenshot ---------- */
+  .shot{
+    display:block; margin:-4px 0 16px; border-radius:11px; overflow:hidden;
+    border:1px solid var(--line); background:var(--bg-soft); line-height:0;
+  }
+  .shot img{width:100%; height:auto; display:block}
+  .shot-cap{
+    display:block; margin-top:-9px; margin-bottom:15px;
+    font-size:.775rem; color:var(--fg-faint);
+  }
+
   /* ---------- minor list ---------- */
   .minor{display:grid; gap:9px; margin-top:16px}
   .minor-row{
@@ -361,6 +381,13 @@
 
       <div class="card">
         <h3>Gatherly</h3>
+        <span class="shot">
+          <picture>
+            <source srcset="images/gatherly-chat.webp" type="image/webp" />
+            <img src="images/gatherly-chat.jpg" alt="Gatherly channel view: channel list, live messages, member presence panel and voice controls" width="1600" height="930" loading="lazy" decoding="async" />
+          </picture>
+        </span>
+        <span class="shot-cap">Channel view — live messaging, presence and voice controls</span>
         <p>
           Real-time communication platform built around a server and channel model:
           messaging with typing indicators, voice rooms and screen sharing, presence
@@ -371,7 +398,7 @@
           <span class="tag">WebRTC</span><span class="tag">MongoDB Atlas</span>
           <span class="tag">Swagger</span>
         </div>
-        <span style="color:var(--fg-faint); font-size:.86rem; font-weight:550">In development</span>
+        <span style="color:var(--fg-faint); font-size:.86rem; font-weight:550">In development · private repo</span>
       </div>
 
       <div class="card">
@@ -410,7 +437,8 @@
       </div>
       <div class="minor-row">
         <strong>Study Planner &amp; Nearest Workspace</strong>
-        <span class="d">Session planner that finds nearby places to work — Flutter, Firebase.</span>
+        <span class="d">Session planner that finds nearby places to work — Flutter, Dart, Firebase.</span>
+        <span style="font-size:.8rem; color:var(--fg-faint); white-space:nowrap">Private repo</span>
       </div>
     </div>
   </div>
