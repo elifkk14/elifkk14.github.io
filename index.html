@@ -219,6 +219,21 @@
     color:var(--fg-faint); margin-bottom:13px;
   }
 
+  /* ---------- award photo (featured project) ---------- */
+  .award-shot{
+    display:block; margin:2px 0 20px; border-radius:12px; overflow:hidden;
+    border:1px solid var(--line); background:var(--bg-soft); line-height:0;
+    box-shadow:var(--shadow-sm);
+  }
+  .award-shot img{width:100%; height:auto; display:block}
+  .award-cap{
+    display:block; margin:-14px 0 20px; font-size:.775rem; color:var(--fg-faint);
+  }
+  @media(min-width:820px){
+    .feature-split{display:grid; grid-template-columns:1.35fr 1fr; gap:30px; align-items:start}
+    .feature-split .award-shot{margin-top:4px}
+  }
+
   /* ---------- project screenshot ---------- */
   .shot{
     display:block; margin:-4px 0 16px; border-radius:11px; overflow:hidden;
