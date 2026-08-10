@@ -183,6 +183,29 @@
   }
   .feature .tag{background:var(--bg); border-color:var(--line)}
 
+  /* ---------- wide project showcase ---------- */
+  .showcase{
+    display:grid; grid-template-columns:1.15fr 1fr; gap:26px; align-items:start;
+    background:var(--bg-card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:22px; box-shadow:var(--shadow-md);
+    margin-top:14px;
+  }
+  .showcase .shot{margin:0 0 8px}
+  .showcase h3{margin:0 0 10px; font-size:1.06rem; letter-spacing:-.02em}
+  .showcase p{color:var(--fg-muted); margin:0 0 15px}
+  .showcase .tags{margin-bottom:15px}
+  .feat-list{
+    display:grid; grid-template-columns:1fr 1fr; gap:6px 14px;
+    margin:0 0 17px; padding:0; list-style:none;
+    font-size:.83rem; color:var(--fg-muted);
+  }
+  .feat-list li{display:flex; align-items:baseline; gap:7px}
+  .feat-list li::before{content:'▸'; color:var(--accent); font-size:.72rem; line-height:1.4}
+  @media(max-width:820px){
+    .showcase{grid-template-columns:1fr; gap:16px; padding:18px}
+    .feat-list{grid-template-columns:1fr}
+  }
+
   /* ---------- timeline ---------- */
   .tl{display:grid; gap:13px}
   .item{
@@ -239,11 +262,28 @@
     display:block; margin:-4px 0 16px; border-radius:11px; overflow:hidden;
     border:1px solid var(--line); background:var(--bg-soft); line-height:0;
   }
-  .shot img{width:100%; height:auto; display:block}
+  .shot img,
+  .shot video{width:100%; height:auto; display:block}
   .shot-cap{
     display:block; margin-top:-9px; margin-bottom:15px;
     font-size:.775rem; color:var(--fg-faint);
   }
+  /* inline architecture diagram — inherits theme via CSS vars */
+  .shot.diagram{background:var(--bg-card); padding:6px 4px; line-height:1}
+  .shot.diagram svg{display:block; width:100%; height:auto; color:var(--fg-faint)}
+
+  /* prominent live-demo button */
+  .demo-btn{
+    display:inline-flex; align-items:center; gap:7px;
+    padding:8px 15px; border-radius:999px; text-decoration:none;
+    font-size:.86rem; font-weight:650; letter-spacing:.01em;
+    color:#fff; background:var(--accent);
+    border:1px solid transparent; box-shadow:var(--shadow-sm);
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .demo-btn:hover{transform:translateY(-1px); box-shadow:var(--shadow-md); background:var(--accent-fg)}
+  .demo-btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){ .demo-btn{transition:none} .demo-btn:hover{transform:none} }
 
   /* ---------- minor list ---------- */
   .minor{display:grid; gap:9px; margin-top:16px}
@@ -366,12 +406,16 @@
       <div class="feature-split">
         <div>
           <p>
-            Graduation project, developed with the Godetya R&amp;D team and in collaboration with
-            neurology and nuclear medicine physicians. A deep learning pipeline for early
-            Alzheimer's detection from multimodal brain imaging (PET&nbsp;+&nbsp;MRI), covering
-            neuroimaging data curation, 3D preprocessing, and model training and validation.
-            Awarded 1st place at Genç Beyinler Yeni Fikirler 2026 (TED University &amp; Turkish
-            Informatics Association). Development ongoing.
+            A university-led research project I joined through the Department of Computer
+            Engineering at TED University and have been contributing to as a volunteer for
+            about a year, working with a team and in collaboration with neurology and nuclear
+            medicine physicians. The work applies deep learning to multimodal brain imaging
+            (PET&nbsp;+&nbsp;MRI) for early Alzheimer's detection; my part covers 3D preprocessing
+            and model training. It was awarded 1st place at Genç Beyinler Yeni Fikirler 2026
+            (TED University &amp; Turkish Informatics Association) and is also my graduation project.
+          </p>
+          <p style="font-size:.86rem; color:var(--fg-faint)">
+            The project is still unpublished, so its methodology and results are not shared publicly.
           </p>
         </div>
         <div>
@@ -394,56 +438,155 @@
       </div>
     </div>
 
-    <div class="rv grid3" style="margin-top:14px">
-
-      <div class="card">
-        <h3>Product Analysis &amp; Barcode Scanner</h3>
-        <p>
-          Self-trained model that analyses product ingredients, flags harmful content and
-          explains why. Accepts input as manual text or via barcode / QR scan.
-        </p>
-        <div class="tags" style="margin-bottom:14px">
-          <span class="tag">Python</span><span class="tag">Machine Learning</span>
-          <span class="tag">NLP</span><span class="tag">FastAPI</span>
-        </div>
-        <a href="https://github.com/elifkk14/product-analysis-ai" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="card">
-        <h3>Gatherly</h3>
+    <div class="rv showcase">
+      <div>
+        <span class="shot">
+          <video src="images/gatherly-demo.mp4" poster="images/gatherly-demo-poster.jpg"
+                 width="1280" height="720" autoplay muted loop playsinline preload="none"
+                 aria-label="Screen recording of the Gatherly landing page: an animated 3D room with the headline, a scroll transition, and the feature section."></video>
+        </span>
+        <span class="shot-cap">Landing page — designed and built alongside the app</span>
         <span class="shot">
           <picture>
             <source srcset="images/gatherly-chat.webp" type="image/webp" />
             <img src="images/gatherly-chat.jpg" alt="Gatherly channel view: channel list, live messages, member presence panel and voice controls" width="1600" height="930" loading="lazy" decoding="async" />
           </picture>
         </span>
-        <span class="shot-cap">Channel view — live messaging, presence and voice controls</span>
+        <span class="shot-cap">Inside the app — live messaging, member presence and voice controls</span>
+      </div>
+      <div>
+        <h3>Gatherly — real-time communication platform</h3>
         <p>
-          Real-time communication platform built around a server and channel model:
-          messaging with typing indicators, voice rooms and screen sharing, presence
-          tracking, role and permission management. REST API documented with Swagger.
+          A server-and-channel communication platform: users create servers, open channels,
+          talk in real time by text or voice, and manage who can do what. Built end to end —
+          from the WebSocket layer to the interface.
         </p>
-        <div class="tags" style="margin-bottom:14px">
+        <ul class="feat-list">
+          <li>Live messaging</li>
+          <li>Typing indicators</li>
+          <li>Voice rooms</li>
+          <li>Screen sharing</li>
+          <li>Presence tracking</li>
+          <li>Roles &amp; permissions</li>
+          <li>Friends &amp; direct messages</li>
+          <li>REST API on Swagger</li>
+        </ul>
+        <div class="tags">
           <span class="tag">Node.js</span><span class="tag">Socket.io</span>
           <span class="tag">WebRTC</span><span class="tag">MongoDB Atlas</span>
           <span class="tag">Swagger</span>
         </div>
-        <span style="color:var(--fg-faint); font-size:.86rem; font-weight:550">In development · private repo</span>
+        <a class="demo-btn" href="https://gatherly-nu-flax.vercel.app/" target="_blank" rel="noopener">Open the live app ↗</a>
+        <span style="display:block; margin-top:11px; color:var(--fg-faint); font-size:.8rem; font-weight:550">In active development · source kept private</span>
+      </div>
+    </div>
+
+    <div class="rv grid2" style="margin-top:14px">
+
+      <div class="card">
+        <h3>Product Analysis &amp; Barcode Scanner</h3>
+        <span class="shot diagram">
+          <svg viewBox="0 0 340 292" role="img" aria-label="Pipeline diagram: barcode, QR or text input goes to an async FastAPI service, which fetches product data from OpenFoodFacts, sends a strict JSON prompt to a local Mistral model running on Ollama, validates the response against a Pydantic schema, and returns a safety verdict with an explanation.">
+            <defs>
+              <marker id="pa-ar" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="currentColor" opacity=".45" />
+              </marker>
+            </defs>
+            <g font-size="11.5" font-weight="600" text-anchor="middle">
+              <g stroke="currentColor" stroke-opacity=".45" marker-end="url(#pa-ar)">
+                <line x1="170" y1="48" x2="170" y2="62" /><line x1="170" y1="106" x2="170" y2="120" />
+                <line x1="170" y1="164" x2="170" y2="178" /><line x1="170" y1="222" x2="170" y2="236" />
+              </g>
+              <rect x="30" y="8" width="280" height="40" rx="10" fill="var(--bg-soft)" stroke="var(--line)" />
+              <text x="170" y="32" fill="var(--fg-muted)">Barcode · QR · manual text</text>
+
+              <rect x="30" y="66" width="280" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity=".45" />
+              <text x="170" y="83" fill="var(--fg)">FastAPI — async pipeline</text>
+              <text x="170" y="97" fill="var(--fg-faint)" font-size="10" font-weight="500">asyncio · aiohttp · LRU cache</text>
+
+              <rect x="30" y="124" width="280" height="40" rx="10" fill="var(--bg-soft)" stroke="var(--line)" />
+              <text x="170" y="148" fill="var(--fg-muted)">OpenFoodFacts — product data</text>
+
+              <rect x="30" y="182" width="280" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity=".45" />
+              <text x="170" y="199" fill="var(--fg)">Mistral via Ollama — local LLM</text>
+              <text x="170" y="213" fill="var(--fg-faint)" font-size="10" font-weight="500">strict JSON output contract</text>
+
+              <rect x="30" y="240" width="280" height="44" rx="10" fill="var(--bg-soft)" stroke="var(--line)" />
+              <text x="170" y="258" fill="var(--fg-muted)">Pydantic / JSON Schema validation</text>
+              <text x="170" y="273" fill="var(--fg-faint)" font-size="10" font-weight="500">→ safety verdict + reason</text>
+            </g>
+          </svg>
+        </span>
+        <span class="shot-cap">Request pipeline — local LLM behind a validated JSON contract</span>
+        <p>
+          Ingredient-safety analyser built on a local Mistral model served through Ollama.
+          The prompt enforces a strict JSON output contract and every response is validated
+          against a Pydantic schema before it reaches the user, so malformed model output is
+          rejected rather than displayed. Input by manual text or barcode / QR scan.
+        </p>
+        <div class="tags" style="margin-bottom:14px">
+          <span class="tag">Python</span><span class="tag">FastAPI</span>
+          <span class="tag">LLM</span><span class="tag">Ollama</span>
+          <span class="tag">Prompt Engineering</span><span class="tag">Pydantic</span>
+          <span class="tag">asyncio</span>
+        </div>
+        <a href="https://github.com/elifkk14/product-analysis-ai" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="card">
         <h3>Spades Multiplayer Game</h3>
+        <span class="shot diagram">
+          <svg viewBox="0 0 340 286" role="img" aria-label="Diagram of the server-authoritative design: four browser clients send intents such as a bid or a card play over Socket.IO; the server validates turn order, follow-suit, trump rules and bidding, owns the single game state, rejects illegal moves, and broadcasts the resulting state back to all four clients.">
+            <defs>
+              <marker id="sp-ar" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="currentColor" opacity=".45" />
+              </marker>
+            </defs>
+            <g font-size="11.5" font-weight="600" text-anchor="middle">
+              <g stroke="currentColor" stroke-opacity=".45" marker-end="url(#sp-ar)">
+                <line x1="170" y1="46" x2="170" y2="62" /><line x1="170" y1="176" x2="170" y2="192" />
+              </g>
+
+              <g fill="var(--bg-soft)" stroke="var(--line)">
+                <rect x="18" y="10" width="70" height="34" rx="9" /><rect x="96" y="10" width="70" height="34" rx="9" />
+                <rect x="174" y="10" width="70" height="34" rx="9" /><rect x="252" y="10" width="70" height="34" rx="9" />
+              </g>
+              <g fill="var(--fg-muted)" font-size="11">
+                <text x="53" y="31">P1</text><text x="131" y="31">P2</text>
+                <text x="209" y="31">P3</text><text x="287" y="31">P4</text>
+              </g>
+              <text x="170" y="58" fill="var(--fg-faint)" font-size="9.5" font-weight="500">intent — bid · play card</text>
+
+              <rect x="18" y="68" width="304" height="102" rx="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity=".45" />
+              <text x="170" y="88" fill="var(--fg)">Server owns the game state</text>
+              <g fill="var(--fg-muted)" font-size="10" font-weight="500">
+                <text x="170" y="106">validates turn order and follow-suit</text>
+                <text x="170" y="121">enforces trump rules and bidding</text>
+                <text x="170" y="136">resolves tricks and scoring</text>
+              </g>
+              <text x="170" y="157" fill="var(--accent-fg)" font-size="10" font-weight="650">illegal moves rejected server-side</text>
+              <text x="170" y="188" fill="var(--fg-faint)" font-size="9.5" font-weight="500">authoritative state</text>
+
+              <rect x="18" y="198" width="304" height="42" rx="11" fill="var(--bg-soft)" stroke="var(--line)" />
+              <text x="170" y="216" fill="var(--fg-muted)">Broadcast to all four clients</text>
+              <text x="170" y="231" fill="var(--fg-faint)" font-size="10" font-weight="500">no client can fake a move</text>
+
+              <text x="170" y="266" fill="var(--fg-faint)" font-size="10" font-weight="500">Node.js · Express · Socket.IO</text>
+            </g>
+          </svg>
+        </span>
+        <span class="shot-cap">Server-authoritative turn engine — clients send intents, never state</span>
         <p>
-          Four-player online Spades (Batak) over WebSockets: room management, bidding,
-          trump and follow-suit enforcement, and a server-authoritative turn engine —
-          clients send intents, the server owns the state.
+          Four-player online Spades (Batak) over WebSockets, with room management, bidding,
+          trump and follow-suit enforcement. Clients never hold the game state: they send
+          intents and the server decides, so a modified client cannot cheat.
         </p>
         <div class="tags" style="margin-bottom:14px">
           <span class="tag">Node.js</span><span class="tag">Socket.io</span>
           <span class="tag">WebSockets</span><span class="tag">JavaScript</span>
         </div>
-        <a href="https://spades-server.vercel.app" target="_blank" rel="noopener"><strong>Live demo ↗</strong></a>
-        <span style="color:var(--fg-faint)"> · </span>
+        <a class="demo-btn" href="https://spades-server.vercel.app" target="_blank" rel="noopener">Play the live demo ↗</a>
+        <span style="color:var(--fg-faint)"> &nbsp;·&nbsp; </span>
         <a href="https://github.com/elifkk14/spades-server" target="_blank" rel="noopener">GitHub →</a>
       </div>
     </div>
@@ -485,21 +628,36 @@
     <div class="rv tl">
       <div class="item">
         <div class="item-top">
-          <h3>Godetya Yapay Zeka ve Mühendislik</h3>
-          <span class="when">Oct 2025 — Present · Ankara</span>
+          <h3>TED University — research project</h3>
+          <span class="when">Sep 2025 — Present · Ankara</span>
         </div>
-        <div class="role">AI/ML Project Contributor (R&amp;D)</div>
+        <div class="role">AI/ML Research Contributor (volunteer)</div>
         <p>
-          Contributing to an R&amp;D project on AI-assisted clinical decision support for
-          neurodegenerative disease diagnosis: built an end-to-end PET–MR neuroimaging
-          pipeline, trained and fine-tuned 3D deep learning models, and performed brain
-          masking and normalisation. Completed the university-mandated internship within
-          this project and continue as an ongoing contributor to the same research team.
+          Contributing to a research project on AI-assisted analysis of neurodegenerative
+          disease, joined through the Department of Computer Engineering. I train 3D deep
+          learning models on brain imaging and work on the preprocessing pipeline, together
+          with a team and in collaboration with neurology and nuclear medicine physicians.
         </p>
         <div class="tags">
-          <span class="tag">PyTorch Lightning</span><span class="tag">MONAI</span>
-          <span class="tag">ResNet3D</span><span class="tag">Vision Transformers</span>
-          <span class="tag">MATLAB / SPM</span><span class="tag">Python</span>
+          <span class="tag">PyTorch</span><span class="tag">PyTorch Lightning</span>
+          <span class="tag">MONAI</span><span class="tag">MATLAB / SPM</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-top">
+          <h3>Godetya Yapay Zeka ve Mühendislik</h3>
+          <span class="when">Jan 2026 — Feb 2026 · Ankara</span>
+        </div>
+        <div class="role">Software Engineering Intern (R&amp;D)</div>
+        <p>
+          Worked on the medical image preprocessing pipeline of the same research project —
+          brain masking and spatial normalisation with MATLAB/SPM, and data preparation for
+          model training — and documented methodology, experiments and results for the team.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">MATLAB / SPM</span>
+          <span class="tag">Image Processing</span>
         </div>
       </div>
       <div class="item">
@@ -509,17 +667,18 @@
         </div>
         <div class="role">Backend &amp; DevOps Intern</div>
         <p>
-          Deployed a PostgreSQL high-availability cluster on Kubernetes with
-          ProxySQL-based routing and failover, achieving sub-30-second leader election.
-          Built and containerised Java/Spring services with Docker, implemented structured
-          JSON logging and zero-touch scaling, and supported deployment workflows using
-          Git-based version control.
+          Built an automated PostgreSQL primary/standby high-availability cluster on Docker
+          with WAL streaming replication and pg_basebackup provisioning, automating the setup
+          with Bash. Migrated the cluster to Kubernetes using StatefulSets, PersistentVolumeClaims,
+          ConfigMaps, Secrets and headless Services, then integrated it with the company's
+          existing failover components and tested failover end to end — cutting a 15–30 minute
+          manual takeover to under 10 seconds.
         </p>
         <div class="tags">
           <span class="tag">Kubernetes</span><span class="tag">Docker</span>
           <span class="tag">Java / Spring</span><span class="tag">PostgreSQL</span>
-          <span class="tag">ProxySQL</span><span class="tag">High Availability</span>
-          <span class="tag">Git</span><span class="tag">Linux</span>
+          <span class="tag">Streaming Replication</span><span class="tag">High Availability</span>
+          <span class="tag">Bash</span><span class="tag">Git</span><span class="tag">Linux</span>
         </div>
       </div>
     </div>
@@ -552,9 +711,9 @@
         <div class="tags">
           <span class="tag">Kubernetes</span><span class="tag">Docker</span>
           <span class="tag">Java / Spring</span><span class="tag">PostgreSQL</span>
-          <span class="tag">High Availability</span><span class="tag">ProxySQL</span>
+          <span class="tag">High Availability</span><span class="tag">Streaming Replication</span>
           <span class="tag">MySQL</span><span class="tag">REST APIs</span>
-          <span class="tag">Git</span><span class="tag">Linux</span>
+          <span class="tag">Bash</span><span class="tag">Git</span><span class="tag">Linux</span>
           <span class="tag">Hadoop</span>
         </div>
       </div>
@@ -590,7 +749,7 @@
           <div>
             <strong>TED University — B.Sc. Computer Engineering</strong>
             <div class="meta">
-              GPA 3.31/4.00 · English-medium<br />
+              English-medium<br />
               Relevant coursework: Information Retrieval, Artificial Intelligence,
               Data Structures &amp; Algorithms, Software Engineering, Signals and Systems
             </div>
@@ -601,8 +760,7 @@
           <div>
             <strong>Tevfik Fikret High School</strong>
             <div class="meta">
-              French–Turkish bilingual program (LabelFrancEducation);
-              diploma recognised as equivalent to the French Baccalauréat · 90.94/100
+              French–Turkish bilingual program (LabelFrancEducation)
             </div>
           </div>
           <span class="when">2018 — 2022</span>
@@ -668,6 +826,13 @@
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hareket azaltma tercihi: otomatik oynayan videolari durdur, poster kalsin
+  if (reduce) {
+    document.querySelectorAll('video[autoplay]').forEach(function(v){
+      v.removeAttribute('autoplay'); v.removeAttribute('loop'); v.controls = true; v.pause();
+    });
+  }
 
   // yumusak gorunum
   if (!reduce && 'IntersectionObserver' in window) {
