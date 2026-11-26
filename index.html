@@ -84,7 +84,19 @@
   .intro{padding:5.5rem 0 4.5rem}
   .intro h1{margin-bottom:1.4rem}
   .intro .lede{font-size:1.3rem; line-height:1.5; max-width:36rem; margin-bottom:1.2rem}
-  .intro .status{max-width:36rem}
+  .proof{list-style:none; margin:2.4rem 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; border-top:1.5px solid var(--ink); padding-top:1rem; max-width:46rem}
+  .proof a{display:block; color:inherit; text-decoration:none}
+  .proof a:hover .what{text-decoration:underline; text-underline-offset:.18em}
+  .proof .vals{display:block; font-variant-numeric:tabular-nums; font-size:1.15rem; line-height:1.35}
+  .proof del{color:var(--muted); text-decoration-thickness:1px; margin-right:.3rem}
+  .proof del,.proof ins{white-space:nowrap}
+  .proof ins{text-decoration:none; font-weight:650; background:var(--mark); color:var(--mark-ink); padding:0 .25em; border-radius:2px}
+  .proof .what{display:block; color:var(--muted); font-size:.92rem; margin-top:.3rem}
+  .now{margin:2.2rem 0 0; display:grid; gap:.6rem; max-width:38rem}
+  .now div{display:grid; grid-template-columns:5rem 1fr; gap:1rem}
+  .now dt{font-weight:600}
+  .now dd{margin:0; color:var(--muted)}
+  @media (max-width:720px){ .proof{grid-template-columns:1fr; gap:1rem} .now div{grid-template-columns:1fr; gap:.1rem} }
   .intro .start{max-width:36rem; margin-top:1.6rem; padding-left:1rem; border-left:3px solid var(--mark)}
   .reach{display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin-top:1.8rem; font-weight:500}
 
@@ -139,6 +151,8 @@
   .photo{padding:0; overflow:hidden}
   .photo img{display:block; width:100%; height:auto}
   .photo figcaption{padding:0 1.2rem 1.1rem}
+  .shot img{border-bottom:1px solid var(--rule)}
+  @media (max-width:859px){ .shot{max-width:24rem} }
 
   .two{display:grid; grid-template-columns:1fr; gap:0 2.5rem}
   @media (min-width:860px){ .two{grid-template-columns:minmax(0,1fr) 23rem; align-items:start} .two figure{margin-top:.3rem} }
@@ -203,7 +217,15 @@
   <div class="intro">
     <h1>Elif Konak</h1>
     <p class="lede">I build machine learning systems for medical imaging and literature search, and the backend that keeps them running. Before I decide how something should work, I measure it.</p>
-    <p class="status muted">Computer Engineering graduate, TED University, June 2026. Based in Ankara and looking for an ML or backend engineering role, in Ankara or remote.</p>
+    <ul class="proof" aria-label="Three measured changes from the projects below">
+      <li><a href="#failover"><span class="vals"><del>15–30 min</del> <ins>under 10 s</ins></span><span class="what">Database failover at Bisoft</span></a></li>
+      <li><a href="#neurolit"><span class="vals"><del>2.37 GB</del> <ins>805 MB</ins></span><span class="what">NeuroLit image, now fits a 512 MB server</span></a></li>
+      <li><a href="#neurolit"><span class="vals"><del>0.37</del> <ins>0.73</ins></span><span class="what">Keyword search finding the right paper</span></a></li>
+    </ul>
+    <dl class="now">
+      <div><dt>Now</dt><dd>Volunteer on a TED University research project on Alzheimer's imaging, and building NeuroLit. Looking for an ML or backend engineering role in Ankara or remote.</dd></div>
+      <div><dt>Before</dt><dd>Interned at Godetya (R&amp;D, 2026) and Bisoft (backend and DevOps, 2025). Computer Engineering, TED University, June 2026.</dd></div>
+    </dl>
     <p class="start">If you only have a minute, <a href="https://neurolit-2e56.onrender.com">ask NeuroLit a question</a>: it answers from 5,000 PubMed abstracts and cites a paper for every sentence. <a href="#neurolit">How I built and measured it</a>.</p>
     <p class="reach">
       <a href="mailto:elif.konak@yahoo.com.tr">elif.konak@yahoo.com.tr</a>
@@ -231,9 +253,22 @@
           <a href="https://github.com/elifkk14/neurolit-rag">Read the code</a>
         </p>
       </div>
+      <div class="two">
+        <div class="prose">
+          <p><b>The problem.</b> A language model asked about Alzheimer's imaging will answer confidently whether or not it knows. I wanted a tool that answers only from PubMed abstracts and shows which paper every sentence came from.</p>
+          <p><b>What I built.</b> A retrieval-augmented generation service over 5,000 PubMed abstracts from 2015 to 2026. A question is embedded, the closest passages are found in PostgreSQL, and a language model writes the answer from them. Then the answer is checked: it must match a schema, every sentence must cite a paper, and every cited paper must be one that was actually retrieved. If a check fails, the model gets one more try; if it fails again, the service says it could not answer.</p>
+        </div>
+        <figure class="photo shot">
+          <a href="https://neurolit-2e56.onrender.com">
+            <picture>
+              <source srcset="images/neurolit-answer.webp" type="image/webp" />
+              <img src="images/neurolit-answer.jpg" alt="NeuroLit answering whether FDG-PET can distinguish Alzheimer's disease from frontotemporal dementia, with numbered citations and three PubMed sources listed below" width="1300" height="1741" loading="lazy" decoding="async" />
+            </picture>
+          </a>
+          <figcaption>A real answer from the live demo. Each bracketed number points to a PubMed source listed underneath.</figcaption>
+        </figure>
+      </div>
       <div class="prose">
-        <p><b>The problem.</b> A language model asked about Alzheimer's imaging will answer confidently whether or not it knows. I wanted a tool that answers only from PubMed abstracts and shows which paper every sentence came from.</p>
-        <p><b>What I built.</b> A retrieval-augmented generation service over 5,000 PubMed abstracts from 2015 to 2026. A question is embedded, the closest passages are found in PostgreSQL, and a language model writes the answer from them. Then the answer is checked: it must match a schema, every sentence must cite a paper, and every cited paper must be one that was actually retrieved. If a check fails, the model gets one more try; if it fails again, the service says it could not answer.</p>
         <p><b>What I expected, and what I measured.</b> My plan assumed that combining keyword search with vector search would find the right paper more often. I wrote 30 test questions and measured. The first run said otherwise: keyword search was so weak that it pulled the combined method down. The cause was PostgreSQL's built-in ranking, which treats "disease", found in 91% of passages, as just as informative as "gadolinium", found in only 10. I replaced it with a score that gives rare words more weight.</p>
       </div>
 
