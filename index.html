@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://elifkk14.github.io/images/og-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Elif Konak, machine learning engineer" />
+<meta property="og:image:alt" content="Elif Konak, machine learning engineer in Ankara. Medical imaging, literature search and the backend that keeps them running." />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Elif Konak, machine learning engineer" />
 <meta name="twitter:description" content="Medical imaging, retrieval systems and reliable backends." />
@@ -85,6 +85,7 @@
   .intro h1{margin-bottom:1.4rem}
   .intro .lede{font-size:1.3rem; line-height:1.5; max-width:36rem; margin-bottom:1.2rem}
   .intro .status{max-width:36rem}
+  .intro .start{max-width:36rem; margin-top:1.6rem; padding-left:1rem; border-left:3px solid var(--mark)}
   .reach{display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin-top:1.8rem; font-weight:500}
 
   /* ---------- sections ---------- */
@@ -106,7 +107,7 @@
 
   /* retrieval table */
   .table-scroll{overflow-x:auto}
-  table{border-collapse:collapse; width:100%; min-width:30rem; font-variant-numeric:tabular-nums; font-size:.98rem}
+  table{border-collapse:collapse; width:100%; font-variant-numeric:tabular-nums; font-size:.98rem}
   th,td{text-align:right; padding:.55rem .7rem; border-bottom:1px solid var(--rule)}
   th:first-child,td:first-child{text-align:left; padding-left:0}
   thead th{font-weight:600; color:var(--muted); font-size:.9rem; border-bottom:1.5px solid var(--ink); vertical-align:bottom}
@@ -140,7 +141,7 @@
   .photo figcaption{padding:0 1.2rem 1.1rem}
 
   .two{display:grid; grid-template-columns:1fr; gap:0 2.5rem}
-  @media (min-width:860px){ .two{grid-template-columns:minmax(0,1fr) 19rem; align-items:start} .two figure{margin-top:.3rem} }
+  @media (min-width:860px){ .two{grid-template-columns:minmax(0,1fr) 23rem; align-items:start} .two figure{margin-top:.3rem} }
 
   /* ---------- lists ---------- */
   .smaller{margin-top:1rem}
@@ -174,6 +175,8 @@
     figure{padding:1.1rem 1rem .9rem}
     .bar-row{grid-template-columns:1fr}
     .scale{margin-left:0}
+    .opt{display:none}
+    th,td{padding:.5rem .4rem}
   }
   @media print{
     body{background:#fff}
@@ -201,6 +204,7 @@
     <h1>Elif Konak</h1>
     <p class="lede">I build machine learning systems for medical imaging and literature search, and the backend that keeps them running. Before I decide how something should work, I measure it.</p>
     <p class="status muted">Computer Engineering graduate, TED University, June 2026. Based in Ankara and looking for an ML or backend engineering role, in Ankara or remote.</p>
+    <p class="start">If you only have a minute, <a href="https://neurolit-2e56.onrender.com">ask NeuroLit a question</a>: it answers from 5,000 PubMed abstracts and cites a paper for every sentence. <a href="#neurolit">How I built and measured it</a>.</p>
     <p class="reach">
       <a href="mailto:elif.konak@yahoo.com.tr">elif.konak@yahoo.com.tr</a>
       <a href="https://github.com/elifkk14">GitHub</a>
@@ -214,7 +218,7 @@
   <div class="wrap">
     <div class="section-intro">
       <h2>Selected work</h2>
-      <p class="muted">Each project is written up the same way: what the problem was, what I did, what I measured and what I changed because of it.</p>
+      <p class="muted">For each one: the problem, what I did, what I measured and what it changed.</p>
     </div>
 
     <!-- NeuroLit -->
@@ -238,14 +242,14 @@
           <table>
             <caption class="sr">Retrieval results on 30 test questions</caption>
             <thead>
-              <tr><th scope="col">Search method</th><th scope="col">Right paper in top 5</th><th scope="col">Mean reciprocal rank</th><th scope="col">Search time</th></tr>
+              <tr><th scope="col">Search method</th><th scope="col">Right paper in top 5</th><th scope="col" class="opt">Mean reciprocal rank</th><th scope="col">Search time</th></tr>
             </thead>
             <tbody>
-              <tr class="before"><td>Keyword, first version</td><td class="was">0.37</td><td></td><td></td></tr>
-              <tr class="before"><td>Combined, first version</td><td class="was">0.80</td><td></td><td></td></tr>
-              <tr><td>Keyword, rare words weighted</td><td>0.73</td><td>0.588</td><td>39 ms</td></tr>
-              <tr><td>Combined, after the fix</td><td>0.93</td><td>0.800</td><td>43 ms</td></tr>
-              <tr><td><b>Vector only, kept</b></td><td><mark>0.97</mark></td><td><mark>0.831</mark></td><td>3 ms</td></tr>
+              <tr class="before"><td>Keyword, first version</td><td class="was">0.37</td><td class="opt"></td><td></td></tr>
+              <tr class="before"><td>Combined, first version</td><td class="was">0.80</td><td class="opt"></td><td></td></tr>
+              <tr><td>Keyword, rare words weighted</td><td>0.73</td><td class="opt">0.588</td><td>39 ms</td></tr>
+              <tr><td>Combined, after the fix</td><td>0.93</td><td class="opt">0.800</td><td>43 ms</td></tr>
+              <tr><td><b>Vector only, kept</b></td><td><mark>0.97</mark></td><td class="opt"><mark>0.831</mark></td><td>3 ms</td></tr>
             </tbody>
           </table>
         </div>
