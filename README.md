@@ -2,7 +2,7 @@
 
 Source for **[elifkk14.github.io](https://elifkk14.github.io)** — my personal site and portfolio.
 
-AI/ML Engineer — deep learning for medical imaging, with backend and platform experience.
+Machine learning engineer: medical imaging, retrieval systems and reliable backends.
 Computer Engineering graduate (TED University, 2026), based in Ankara, Türkiye.
 
 ## Stack
@@ -12,7 +12,7 @@ A deliberately simple, dependency-free single page:
 - Plain HTML + CSS — no framework, no build step
 - No external CSS/JS/font requests; icons are inline SVG
 - Automatic light/dark theme via `prefers-color-scheme`
-- Responsive single-column layout, ~23 KB total
+- Responsive single-column layout; each project is written up as problem, work, measurement, decision
 - Deployed with GitHub Pages from `main`
 
 ## Structure

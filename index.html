@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Elif Konak — AI/ML Engineer | Deep Learning for Medical Imaging</title>
-<meta name="description" content="Computer Engineering graduate specialising in deep learning for medical imaging and AI/ML, with a backend foundation. Ankara, Türkiye — open to Software / ML Engineer roles." />
-<meta property="og:title" content="Elif Konak — AI/ML Engineer" />
-<meta property="og:description" content="Deep learning for medical imaging · AI/ML · Backend. Open to Software / ML Engineer roles." />
+<title>Elif Konak, machine learning engineer</title>
+<meta name="description" content="Machine learning engineer in Ankara working on medical imaging, retrieval systems and reliable backends. Computer Engineering, TED University, 2026." />
+<meta property="og:title" content="Elif Konak, machine learning engineer" />
+<meta property="og:description" content="Medical imaging, retrieval systems and reliable backends. Each project says what I measured and what I changed because of it." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://elifkk14.github.io/" />
 <meta property="og:image" content="https://elifkk14.github.io/images/og-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Elif Konak — AI/ML engineer, deep learning for medical imaging" />
+<meta property="og:image:alt" content="Elif Konak, machine learning engineer" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Elif Konak — AI/ML Engineer" />
-<meta name="twitter:description" content="Deep learning for medical imaging · AI/ML · Backend. Open to Software / ML Engineer roles." />
+<meta name="twitter:title" content="Elif Konak, machine learning engineer" />
+<meta name="twitter:description" content="Medical imaging, retrieval systems and reliable backends." />
 <meta name="twitter:image" content="https://elifkk14.github.io/images/og-card.png" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230d6b73'/><text x='50' y='68' font-family='Georgia,serif' font-size='56' text-anchor='middle' fill='white'>ek</text></svg>" />
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
-  /* Inter — self-hosted, subset to the glyphs this page uses (~31 KB total, variable weight) */
+  /* Inter, self-hosted and subset (see README). Headings use the reader's book serif. */
   @font-face{
     font-family:'Inter'; font-style:normal; font-weight:400 800; font-display:swap;
     src:url('fonts/inter-latin-ext.woff2') format('woff2');
@@ -31,838 +31,373 @@
     src:url('fonts/inter-latin.woff2') format('woff2');
     unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
   }
-</style>
-<style>
+
   :root{
-    --bg:#fcfcfd; --bg-soft:#f4f6f8; --bg-card:#ffffff;
-    --fg:#0f1115; --fg-muted:#59616e; --fg-faint:#8a929f;
-    --accent:#2f5fe0; --accent-fg:#2149bd; --accent-soft:#edf2ff;
-    --line:#e6e9ee; --line-soft:#eef1f5;
-    --shadow-sm:0 1px 2px rgba(15,17,21,.04);
-    --shadow-md:0 1px 2px rgba(15,17,21,.04), 0 10px 30px -12px rgba(15,17,21,.12);
-    --shadow-lg:0 2px 4px rgba(15,17,21,.05), 0 18px 44px -16px rgba(15,17,21,.18);
-    --radius:16px; --maxw:1060px;
-    --glow:rgba(47,95,224,.10); --dot:rgba(15,17,21,.055);
+    --paper:#f2f4f3;   /* cool light grey, like a lightbox */
+    --sheet:#fbfcfc;   /* figures sit on a slightly brighter sheet */
+    --ink:#17202a;
+    --muted:#56616c;
+    --rule:#cdd5d9;
+    --accent:#0d6b73;  /* deep teal: links */
+    --mark:#f3cf5b;    /* highlighter: only on the numbers that decided something */
+    --mark-ink:#17202a;
+    --serif:Charter,"Bitstream Charter","Iowan Old Style","Sitka Text",Cambria,Georgia,serif;
+    --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --prose:40rem;
+    --wide:54rem;
   }
   @media (prefers-color-scheme:dark){
     :root{
-      --bg:#0b0e13; --bg-soft:#101620; --bg-card:#131a24;
-      --fg:#e9eef6; --fg-muted:#9aa5b5; --fg-faint:#6b7686;
-      --accent:#5b8cff; --accent-fg:#93b4ff; --accent-soft:#14203a;
-      --line:#1e2733; --line-soft:#18202b;
-      --shadow-sm:0 1px 2px rgba(0,0,0,.4);
-      --shadow-md:0 1px 2px rgba(0,0,0,.4), 0 12px 34px -14px rgba(0,0,0,.7);
-      --shadow-lg:0 2px 6px rgba(0,0,0,.5), 0 22px 50px -18px rgba(0,0,0,.8);
-      --glow:rgba(91,140,255,.13); --dot:rgba(233,238,246,.05);
+      --paper:#12171c; --sheet:#182027; --ink:#e4e9ec; --muted:#9aa6af;
+      --rule:#2c363e; --accent:#62bcc3; --mark:#d8ae2e; --mark-ink:#12171c;
     }
   }
+
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation-duration:.001ms !important; transition-duration:.001ms !important}
-  }
-  body{
-    margin:0; background:var(--bg); color:var(--fg);
-    font:16px/1.7 'Inter',ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    font-feature-settings:'cv05' 1,'ss03' 1;
-    font-variant-ligatures:common-ligatures contextual;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  }
-  a{color:var(--accent-fg); text-decoration:none; text-underline-offset:3px}
-  a:hover{text-decoration:underline}
-  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 26px}
-  h1,h2,h3,h4{line-height:1.2; margin:0; letter-spacing:-.021em}
-  .skip{
-    position:absolute; left:-9999px; top:0; background:var(--accent); color:#fff;
-    padding:10px 16px; border-radius:0 0 8px 0; z-index:99; font-weight:600;
-  }
-  .skip:focus{left:0; text-decoration:none}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--paper); color:var(--ink); font:400 1.0625rem/1.62 var(--sans)}
+  a{color:var(--accent); text-underline-offset:.18em; text-decoration-thickness:1px}
+  a:hover{text-decoration-thickness:2px}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+  .skip{position:absolute; left:-9999px}
+  .skip:focus{left:1rem; top:1rem; background:var(--sheet); padding:.5rem .75rem; z-index:10}
+  .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
 
-  /* ---------- nav ---------- */
-  header.nav{
-    position:sticky; top:0; z-index:50; border-bottom:1px solid var(--line);
-    background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(12px) saturate(1.4);
-  }
-  .nav-in{display:flex; align-items:center; justify-content:space-between; height:62px; gap:20px}
-  .brand{font-weight:700; font-size:1.02rem; color:var(--fg); letter-spacing:-.03em}
-  .brand span{color:var(--accent)}
-  .nav-links{display:flex; gap:4px; list-style:none; margin:0; padding:0}
-  .nav-links a{
-    display:block; color:var(--fg-muted); font-size:.875rem; font-weight:500;
-    padding:7px 11px; border-radius:8px; transition:color .18s, background .18s;
-  }
-  .nav-links a:hover{color:var(--fg); background:var(--bg-soft); text-decoration:none}
-  .nav-links a.on{color:var(--accent-fg); background:var(--accent-soft)}
-  @media(max-width:760px){ .nav-links{display:none} }
+  .wrap{max-width:var(--wide); margin:0 auto; padding:0 1.25rem}
+  .prose{max-width:var(--prose)}
 
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative; padding:104px 0 84px; border-bottom:1px solid var(--line); overflow:hidden;
-    background:
-      radial-gradient(760px 380px at 12% -8%, var(--glow), transparent 68%),
-      radial-gradient(560px 300px at 92% 8%, var(--glow), transparent 72%);
-  }
-  .hero::before{
-    content:''; position:absolute; inset:0; pointer-events:none;
-    background-image:radial-gradient(var(--dot) 1px, transparent 1px);
-    background-size:22px 22px;
-    mask-image:linear-gradient(to bottom, #000 0%, transparent 78%);
-    -webkit-mask-image:linear-gradient(to bottom, #000 0%, transparent 78%);
-  }
-  .hero-in{position:relative; max-width:730px}
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:9px; font-size:.75rem; font-weight:600;
-    letter-spacing:.05em; text-transform:uppercase; color:var(--accent-fg);
-    background:var(--bg-card); border:1px solid var(--line);
-    padding:7px 14px; border-radius:999px; margin-bottom:24px; box-shadow:var(--shadow-sm);
-  }
-  .dot{
-    width:7px;height:7px;border-radius:50%;background:#16a34a; flex:none;
-    box-shadow:0 0 0 3px rgba(22,163,74,.16);
-  }
-  .hero h1{font-size:clamp(2.3rem,5.4vw,3.5rem); font-weight:800; letter-spacing:-.035em; margin-bottom:16px}
-  .tagline{
-    font-size:clamp(1.06rem,2.2vw,1.28rem); color:var(--fg-muted);
-    font-weight:450; margin-bottom:20px; letter-spacing:-.012em;
-  }
-  .tagline b{color:var(--fg); font-weight:650}
-  .hero p.lede{color:var(--fg-muted); max-width:60ch; margin:0 0 32px; font-size:1.02rem}
-  .cta{display:flex; flex-wrap:wrap; gap:10px}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; font-size:.9rem; font-weight:600;
-    padding:11px 18px; border-radius:11px; border:1px solid var(--line);
-    background:var(--bg-card); color:var(--fg); box-shadow:var(--shadow-sm);
-    transition:transform .18s cubic-bezier(.2,.7,.3,1), box-shadow .18s, border-color .18s;
-  }
-  .btn:hover{text-decoration:none; transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--fg-faint)}
-  .btn.primary{background:var(--accent); border-color:transparent; color:#fff; box-shadow:0 6px 18px -6px var(--accent)}
-  .btn.primary:hover{filter:brightness(1.08); border-color:transparent}
-  .btn svg{width:16px;height:16px;flex:none}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; letter-spacing:-.005em; line-height:1.18; margin:0}
+  h1{font-size:clamp(2.6rem,6vw,3.6rem); letter-spacing:-.015em}
+  h2{font-size:1.75rem; margin-bottom:.4rem}
+  h3{font-size:1.45rem}
+  p{margin:0 0 1rem}
+  code{font-size:.92em}
+  .muted{color:var(--muted)}
+  mark{background:var(--mark); color:var(--mark-ink); padding:0 .2em; border-radius:2px}
+
+  /* ---------- top ---------- */
+  header.top{padding:2.2rem 0 0}
+  header.top nav{display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap}
+  header.top .home{font-family:var(--serif); font-weight:600; color:var(--ink); text-decoration:none; font-size:1.05rem}
+  header.top ul{list-style:none; margin:0; padding:0; display:flex; gap:1.4rem; font-size:.95rem}
+
+  .intro{padding:5.5rem 0 4.5rem}
+  .intro h1{margin-bottom:1.4rem}
+  .intro .lede{font-size:1.3rem; line-height:1.5; max-width:36rem; margin-bottom:1.2rem}
+  .intro .status{max-width:36rem}
+  .reach{display:flex; flex-wrap:wrap; gap:.6rem 1.6rem; margin-top:1.8rem; font-weight:500}
 
   /* ---------- sections ---------- */
-  section{padding:76px 0; border-bottom:1px solid var(--line); scroll-margin-top:62px}
-  .soft{background:var(--bg-soft)}
-  .sec-head{margin-bottom:34px; max-width:62ch}
-  .sec-num{
-    display:block; font-size:.72rem; font-weight:700; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--fg-faint); margin-bottom:10px;
-  }
-  .sec-head h2{font-size:clamp(1.4rem,2.6vw,1.68rem); font-weight:730; margin-bottom:9px}
-  .sec-head p{color:var(--fg-muted); margin:0; font-size:.96rem}
+  section{padding:3.5rem 0; border-top:1px solid var(--rule)}
+  .section-intro{max-width:var(--prose); margin-bottom:1rem}
 
-  /* ---------- featured ---------- */
-  .feature{
-    position:relative; background:var(--bg-card); border:1px solid var(--line);
-    border-radius:var(--radius); padding:34px; box-shadow:var(--shadow-lg); overflow:hidden;
-  }
-  .feature::before{
-    content:''; position:absolute; inset:0 0 auto 0; height:3px;
-    background:linear-gradient(90deg, var(--accent), #7c5cf0 45%, #d946a6);
-  }
-  .feature::after{
-    content:''; position:absolute; top:-90px; right:-90px; width:280px; height:280px;
-    border-radius:50%; background:var(--glow); pointer-events:none;
-  }
-  .award{
-    display:inline-flex; align-items:center; gap:7px; font-size:.78rem; font-weight:650;
-    color:#8a5a08; background:linear-gradient(180deg,#fffbeb,#fef3c7);
-    border:1px solid #f5d98a; padding:6px 12px; border-radius:999px; margin-bottom:17px;
-  }
-  @media(prefers-color-scheme:dark){
-    .award{color:#fbd465; background:linear-gradient(180deg,#3b2f11,#2e250d); border-color:#5b4a1c}
-  }
-  .feature h3{font-size:clamp(1.15rem,2.3vw,1.34rem); margin-bottom:13px; letter-spacing:-.025em}
-  .feature p{color:var(--fg-muted); margin:0 0 19px; max-width:74ch}
-  .tags{display:flex; flex-wrap:wrap; gap:7px}
-  .tag{
-    font-size:.765rem; font-weight:550; color:var(--fg-muted); letter-spacing:.005em;
-    background:var(--bg-soft); border:1px solid var(--line-soft);
-    padding:4.5px 11px; border-radius:8px; white-space:nowrap;
-  }
-  .feature .tag{background:var(--bg); border-color:var(--line)}
+  /* ---------- case studies ---------- */
+  article.case{padding:2.5rem 0 3rem}
+  article.case + article.case{border-top:1px dashed var(--rule)}
+  .case-head{margin-bottom:1.3rem}
+  .case-head p{margin:.4rem 0 0; color:var(--muted)}
+  .case-links{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; font-weight:500}
+  .case-head .case-links{margin-top:.8rem}
+  .case .prose b{font-weight:650}
+  .used{font-size:.95rem; color:var(--muted); margin-top:1.2rem}
 
-  /* ---------- wide project showcase ---------- */
-  .showcase{
-    display:grid; grid-template-columns:1.15fr 1fr; gap:26px; align-items:start;
-    background:var(--bg-card); border:1px solid var(--line);
-    border-radius:var(--radius); padding:22px; box-shadow:var(--shadow-md);
-    margin-top:14px;
-  }
-  .showcase .shot{margin:0 0 8px}
-  .showcase h3{margin:0 0 10px; font-size:1.06rem; letter-spacing:-.02em}
-  .showcase p{color:var(--fg-muted); margin:0 0 15px}
-  .showcase .tags{margin-bottom:15px}
-  .feat-list{
-    display:grid; grid-template-columns:1fr 1fr; gap:6px 14px;
-    margin:0 0 17px; padding:0; list-style:none;
-    font-size:.83rem; color:var(--fg-muted);
-  }
-  .feat-list li{display:flex; align-items:baseline; gap:7px}
-  .feat-list li::before{content:'▸'; color:var(--accent); font-size:.72rem; line-height:1.4}
-  @media(max-width:820px){
-    .showcase{grid-template-columns:1fr; gap:16px; padding:18px}
-    .feat-list{grid-template-columns:1fr}
-  }
+  figure{margin:2rem 0; background:var(--sheet); border:1px solid var(--rule); border-radius:6px; padding:1.4rem 1.5rem 1.1rem}
+  figcaption{font-size:.92rem; color:var(--muted); margin-top:.9rem; max-width:var(--prose)}
 
-  /* ---------- timeline ---------- */
-  .tl{display:grid; gap:13px}
-  .item{
-    background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);
-    padding:26px 28px; box-shadow:var(--shadow-sm); transition:box-shadow .2s, border-color .2s;
-  }
-  .item:hover{box-shadow:var(--shadow-md); border-color:var(--fg-faint)}
-  .item-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; margin-bottom:5px}
-  .item h3{font-size:1.05rem; font-weight:680}
-  .role{color:var(--accent-fg); font-weight:600; font-size:.92rem; margin-bottom:11px}
-  .when{
-    color:var(--fg-faint); font-size:.82rem; font-weight:550; white-space:nowrap;
-    font-variant-numeric:tabular-nums;
-  }
-  .item p{margin:0 0 15px; color:var(--fg-muted); font-size:.95rem; max-width:78ch}
+  /* retrieval table */
+  .table-scroll{overflow-x:auto}
+  table{border-collapse:collapse; width:100%; min-width:30rem; font-variant-numeric:tabular-nums; font-size:.98rem}
+  th,td{text-align:right; padding:.55rem .7rem; border-bottom:1px solid var(--rule)}
+  th:first-child,td:first-child{text-align:left; padding-left:0}
+  thead th{font-weight:600; color:var(--muted); font-size:.9rem; border-bottom:1.5px solid var(--ink); vertical-align:bottom}
+  tbody tr:last-child td{border-bottom:none}
+  tr.before td{color:var(--muted)}
+  tr.before td.was{text-decoration:line-through; text-decoration-thickness:1px}
 
-  /* ---------- grids / cards ---------- */
-  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-  @media(max-width:900px){ .grid3{grid-template-columns:1fr 1fr} }
-  @media(max-width:700px){ .grid2,.grid3{grid-template-columns:1fr} }
-  .card{
-    display:flex; flex-direction:column;
-    background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);
-    padding:24px 25px; box-shadow:var(--shadow-sm);
-    transition:transform .2s cubic-bezier(.2,.7,.3,1), box-shadow .2s, border-color .2s;
-  }
-  .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--fg-faint)}
-  .card h3{font-size:1.01rem; font-weight:680; margin-bottom:10px}
-  .card p{margin:0 0 14px; color:var(--fg-muted); font-size:.92rem}
-  .card .tags{margin-top:auto}
-  .skill-h{
-    font-size:.72rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase;
-    color:var(--fg-faint); margin-bottom:13px;
-  }
+  /* to-scale bars */
+  .bars{display:grid; gap:1.1rem}
+  .bar-row{display:grid; grid-template-columns:10rem 1fr; gap:.4rem 1rem; align-items:center}
+  .bar-label{font-weight:600}
+  .bar-label span{display:block; font-weight:400; color:var(--muted); font-size:.92rem}
+  .track{position:relative; height:1.6rem; isolation:isolate}
+  .bar{position:absolute; left:0; top:0; bottom:0; border-radius:2px}
+  .bar.span{width:100%; background:color-mix(in srgb,var(--muted) 28%,transparent)}
+  .bar.best{width:50%; background:color-mix(in srgb,var(--muted) 62%,transparent)}
+  .bar.auto{width:.56%; min-width:2px; background:var(--accent)}
+  .bar.auto::after{content:""; position:absolute; left:-7px; width:calc(100% + 14px); top:-5px; bottom:-5px; border-radius:3px; background:var(--mark); z-index:-1}
+  .scale{display:flex; justify-content:space-between; font-size:.85rem; color:var(--muted); margin:.5rem 0 0 11rem; font-variant-numeric:tabular-nums}
 
-  /* ---------- award photo (featured project) ---------- */
-  .award-shot{
-    display:block; margin:2px 0 20px; border-radius:12px; overflow:hidden;
-    border:1px solid var(--line); background:var(--bg-soft); line-height:0;
-    box-shadow:var(--shadow-sm);
+  /* request path */
+  .flow{list-style:none; margin:0; padding:0; display:grid; gap:.45rem}
+  .flow li{display:grid; grid-template-columns:1rem 1fr; gap:.7rem; align-items:baseline}
+  .flow li::before{content:""; width:.55rem; height:.55rem; border:1.5px solid var(--accent); border-radius:50%}
+  .flow li.check::before{background:var(--accent)}
+  .flow small{color:var(--muted); font-size:.92rem; margin-left:.35rem}
+
+  /* award photo */
+  .photo{padding:0; overflow:hidden}
+  .photo img{display:block; width:100%; height:auto}
+  .photo figcaption{padding:0 1.2rem 1.1rem}
+
+  .two{display:grid; grid-template-columns:1fr; gap:0 2.5rem}
+  @media (min-width:860px){ .two{grid-template-columns:minmax(0,1fr) 19rem; align-items:start} .two figure{margin-top:.3rem} }
+
+  /* ---------- lists ---------- */
+  .smaller{margin-top:1rem}
+  .smaller h3{margin-bottom:.4rem}
+  .others{list-style:none; margin:0; padding:0}
+  .others li{display:grid; grid-template-columns:1fr; gap:.15rem 1.5rem; padding:1rem 0; border-bottom:1px solid var(--rule)}
+  @media (min-width:700px){ .others li{grid-template-columns:12rem 1fr} }
+  .others b{font-weight:600}
+  .others p{margin:0}
+
+  .timeline{list-style:none; margin:0; padding:0}
+  .timeline li{display:grid; grid-template-columns:1fr; gap:.2rem 2rem; padding:1.3rem 0; border-bottom:1px solid var(--rule)}
+  @media (min-width:700px){ .timeline li{grid-template-columns:10rem 1fr} }
+  .when{color:var(--muted); font-variant-numeric:tabular-nums; font-size:.95rem; padding-top:.15rem}
+  .timeline h3{font-family:var(--sans); font-size:1.08rem; font-weight:650; letter-spacing:0}
+  .timeline .where{color:var(--muted); margin:.1rem 0 .5rem}
+  .timeline p{margin:0}
+
+  .tools{display:grid; gap:.9rem; max-width:var(--prose); margin-top:2.8rem}
+  .tools p{margin:0}
+  .tools b{font-weight:600}
+
+  footer{border-top:1px solid var(--rule); padding:3.5rem 0 4rem}
+  footer .big{font-family:var(--serif); font-size:1.6rem; margin:.4rem 0 1rem; overflow-wrap:anywhere}
+
+  @media (max-width:560px){
+    body{font-size:1rem}
+    .intro{padding:3.5rem 0 3rem}
+    .intro .lede{font-size:1.15rem}
+    header.top ul{gap:1rem}
+    figure{padding:1.1rem 1rem .9rem}
+    .bar-row{grid-template-columns:1fr}
+    .scale{margin-left:0}
   }
-  .award-shot img{width:100%; height:auto; display:block}
-  .award-cap{
-    display:block; margin:-14px 0 20px; font-size:.775rem; color:var(--fg-faint);
-  }
-  @media(min-width:820px){
-    .feature-split{display:grid; grid-template-columns:1.35fr 1fr; gap:30px; align-items:start}
-    .feature-split .award-shot{margin-top:4px}
-  }
-
-  /* ---------- project screenshot ---------- */
-  .shot{
-    display:block; margin:-4px 0 16px; border-radius:11px; overflow:hidden;
-    border:1px solid var(--line); background:var(--bg-soft); line-height:0;
-  }
-  .shot img,
-  .shot video{width:100%; height:auto; display:block}
-  .shot-cap{
-    display:block; margin-top:-9px; margin-bottom:15px;
-    font-size:.775rem; color:var(--fg-faint);
-  }
-  /* inline architecture diagram — inherits theme via CSS vars */
-  .shot.diagram{background:var(--bg-card); padding:6px 4px; line-height:1}
-  .shot.diagram svg{display:block; width:100%; height:auto; color:var(--fg-faint)}
-
-  /* prominent live-demo button */
-  .demo-btn{
-    display:inline-flex; align-items:center; gap:7px;
-    padding:8px 15px; border-radius:999px; text-decoration:none;
-    font-size:.86rem; font-weight:650; letter-spacing:.01em;
-    color:#fff; background:var(--accent);
-    border:1px solid transparent; box-shadow:var(--shadow-sm);
-    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-  }
-  .demo-btn:hover{transform:translateY(-1px); box-shadow:var(--shadow-md); background:var(--accent-fg)}
-  .demo-btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
-  @media (prefers-reduced-motion:reduce){ .demo-btn{transition:none} .demo-btn:hover{transform:none} }
-
-  /* ---------- minor list ---------- */
-  .minor{display:grid; gap:9px; margin-top:16px}
-  .minor-row{
-    display:flex; flex-wrap:wrap; align-items:baseline; gap:10px;
-    padding:14px 18px; background:var(--bg-card);
-    border:1px solid var(--line); border-radius:12px;
-    transition:border-color .2s, box-shadow .2s;
-  }
-  .minor-row:hover{border-color:var(--fg-faint); box-shadow:var(--shadow-sm)}
-  .minor-row strong{font-weight:650; font-size:.92rem}
-  .minor-row span.d{color:var(--fg-muted); font-size:.875rem; flex:1 1 260px}
-  .minor-row a{font-size:.84rem; white-space:nowrap; font-weight:550}
-
-  /* ---------- rows ---------- */
-  .row{display:flex; justify-content:space-between; gap:16px; padding:15px 0; border-bottom:1px solid var(--line-soft)}
-  .row:last-child{border-bottom:0}
-  .row:first-of-type{padding-top:4px}
-  .row strong{font-weight:650; font-size:.95rem}
-  .row .meta{color:var(--fg-muted); font-size:.875rem; margin-top:4px; line-height:1.6}
-  .row .when{align-self:flex-start}
-
-  /* ---------- contact ---------- */
-  .contact-box{text-align:center; max-width:620px; margin:0 auto}
-  .contact-box h2{font-size:clamp(1.5rem,3vw,1.85rem); font-weight:740; margin-bottom:13px; letter-spacing:-.03em}
-  .contact-box p{color:var(--fg-muted); margin:0 0 28px}
-
-  footer{padding:38px 0; color:var(--fg-faint); font-size:.85rem}
-  .foot-in{display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center}
-  .foot-links{display:flex; gap:20px}
-  .foot-links a{color:var(--fg-muted); font-weight:500}
-
-  /* ---------- reveal ---------- */
-  .rv{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1)}
-  .rv.in{opacity:1; transform:none}
-  @media (prefers-reduced-motion:reduce){ .rv{opacity:1; transform:none} }
-
-  /* ---------- print ---------- */
   @media print{
-    header.nav,.cta,.skip{display:none}
-    body{background:#fff; color:#000; font-size:11pt}
-    section{padding:14pt 0; border:0; break-inside:avoid}
-    .card,.item,.feature,.minor-row{box-shadow:none; border:1px solid #ccc; break-inside:avoid}
-    .hero{padding:0 0 14pt; background:none}
-    .hero::before{display:none}
+    body{background:#fff}
+    header.top ul,.skip{display:none}
+    figure{break-inside:avoid}
   }
 </style>
 </head>
 <body>
+<a class="skip" href="#work">Skip to selected work</a>
 
-<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="top">
+    <nav aria-label="Main">
+      <a class="home" href="#">Elif Konak</a>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top">Elif<span>.</span>Konak</a>
-    <ul class="nav-links">
-      <li><a href="#work">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<div id="top" class="hero">
-  <div class="wrap">
-    <div class="hero-in">
-      <span class="eyebrow"><span class="dot"></span> Open to Software / ML Engineer roles</span>
-      <h1>Elif Konak</h1>
-      <div class="tagline">
-        <b>AI/ML Engineer</b> — deep learning for <b>medical imaging</b>, with a backend foundation
-      </div>
-      <p class="lede">
-        Computer Engineering graduate (TED University, 2026). I build end-to-end
-        neuroimaging pipelines and train 3D deep learning models on brain PET and MRI, with backend and platform experience alongside it — from
-        containerised services to a PostgreSQL high-availability cluster on Kubernetes.
-        Based in Ankara, Türkiye — open to on-site and remote roles.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-          View my work
-        </a>
-        <a class="btn" href="https://github.com/elifkk14" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
-          GitHub
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/elif-konakk/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn" href="mailto:elif.konak@yahoo.com.tr">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-          Email
-        </a>
-      </div>
-    </div>
+  <div class="intro">
+    <h1>Elif Konak</h1>
+    <p class="lede">I build machine learning systems for medical imaging and literature search, and the backend that keeps them running. Before I decide how something should work, I measure it.</p>
+    <p class="status muted">Computer Engineering graduate, TED University, June 2026. Based in Ankara and looking for an ML or backend engineering role, in Ankara or remote.</p>
+    <p class="reach">
+      <a href="mailto:elif.konak@yahoo.com.tr">elif.konak@yahoo.com.tr</a>
+      <a href="https://github.com/elifkk14">GitHub</a>
+      <a href="https://www.linkedin.com/in/elif-konakk/">LinkedIn</a>
+    </p>
   </div>
 </div>
 
-<!-- ============ FEATURED ============ -->
-<main id="main">
-<section class="soft" id="projects">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">01 — Work</span>
-      <h2>Featured work</h2>
-      <p>Selected work — medical AI first, then applied ML and real-time backend systems.</p>
-    </div>
-
-    <div class="rv feature">
-      <span class="award">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.9 7 22l5-3 5 3-1.2-8.1"/></svg>
-        1st Place — Genç Beyinler Yeni Fikirler 2026
-      </span>
-      <h3>Multimodal Alzheimer's Analysis</h3>
-      <div class="feature-split">
-        <div>
-          <p>
-            A university-led research project I joined through the Department of Computer
-            Engineering at TED University and have been contributing to as a volunteer for
-            about a year, working with a team and in collaboration with neurology and nuclear
-            medicine physicians. The work applies deep learning to multimodal brain imaging
-            (amyloid PET&nbsp;+&nbsp;MRI) for AI-assisted analysis of Alzheimer's disease; my part covers
-            the MRI and PET data pipeline and model training. It was awarded 1st place at Genç Beyinler
-            Yeni Fikirler 2026 (Turkish Informatics Association, Ankara Branch) and is also my graduation project.
-          </p>
-          <p style="font-size:.86rem; color:var(--fg-faint)">
-            The project is still unpublished, so its methodology and results are not shared publicly.
-          </p>
-        </div>
-        <div>
-          <span class="award-shot">
-            <picture>
-              <source srcset="images/award-genc-beyinler.webp" type="image/webp" />
-              <img src="images/award-genc-beyinler.jpg"
-                   alt="Award ceremony at TED University: the first-place prize being presented for the Alzheimer's analysis project at Genç Beyinler Yeni Fikirler 2026"
-                   width="1200" height="842" loading="lazy" decoding="async" />
-            </picture>
-          </span>
-          <span class="award-cap">First-place prize presented at TED University — Genç Beyinler Yeni Fikirler 2026, organised with the Turkish Informatics Association</span>
-        </div>
-      </div>
-      <div class="tags">
-        <span class="tag">Deep Learning</span><span class="tag">Medical Imaging</span>
-        <span class="tag">PET / MRI</span><span class="tag">3D CNN · ResNet3D</span>
-        <span class="tag">Vision Transformers</span><span class="tag">PyTorch Lightning</span>
-        <span class="tag">MONAI</span><span class="tag">MATLAB / SPM</span>
-      </div>
-    </div>
-
-    <div class="rv showcase">
-      <div>
-        <span class="shot">
-          <video src="images/gatherly-demo.mp4" poster="images/gatherly-demo-poster.jpg"
-                 width="1280" height="720" autoplay muted loop playsinline preload="none"
-                 aria-label="Screen recording of the Gatherly landing page: an animated 3D room with the headline, a scroll transition, and the feature section."></video>
-        </span>
-        <span class="shot-cap">Landing page — designed and built alongside the app</span>
-        <span class="shot">
-          <picture>
-            <source srcset="images/gatherly-chat.webp" type="image/webp" />
-            <img src="images/gatherly-chat.jpg" alt="Gatherly channel view: channel list, live messages, member presence panel and voice controls" width="1600" height="930" loading="lazy" decoding="async" />
-          </picture>
-        </span>
-        <span class="shot-cap">Inside the app — live messaging, member presence and voice controls</span>
-      </div>
-      <div>
-        <h3>Gatherly — real-time communication platform</h3>
-        <p>
-          A server-and-channel communication platform: users create servers, open channels,
-          talk in real time by text or voice, and manage who can do what. Built end to end —
-          from the WebSocket layer to the interface.
-        </p>
-        <ul class="feat-list">
-          <li>Live messaging</li>
-          <li>Typing indicators</li>
-          <li>Voice rooms</li>
-          <li>Screen sharing</li>
-          <li>Presence tracking</li>
-          <li>Roles &amp; permissions</li>
-          <li>Friends &amp; direct messages</li>
-          <li>REST API on Swagger</li>
-        </ul>
-        <div class="tags">
-          <span class="tag">Node.js</span><span class="tag">Socket.io</span>
-          <span class="tag">WebRTC</span><span class="tag">MongoDB Atlas</span>
-          <span class="tag">Swagger</span>
-        </div>
-        <a class="demo-btn" href="https://gatherly-nu-flax.vercel.app/" target="_blank" rel="noopener">Open the live app ↗</a>
-        <span style="display:block; margin-top:11px; color:var(--fg-faint); font-size:.8rem; font-weight:550">In active development · source kept private</span>
-      </div>
-    </div>
-
-    <div class="rv grid2" style="margin-top:14px">
-
-      <div class="card">
-        <h3>Product Analysis &amp; Barcode Scanner</h3>
-        <span class="shot diagram">
-          <svg viewBox="0 0 340 292" role="img" aria-label="Pipeline diagram: barcode, QR or text input goes to an async FastAPI service, which fetches product data from OpenFoodFacts, sends a strict JSON prompt to a local Mistral model running on Ollama, validates the response against a Pydantic schema, and returns a safety verdict with an explanation.">
-            <defs>
-              <marker id="pa-ar" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-                <path d="M0 0 L8 4 L0 8 z" fill="currentColor" opacity=".45" />
-              </marker>
-            </defs>
-            <g font-size="11.5" font-weight="600" text-anchor="middle">
-              <g stroke="currentColor" stroke-opacity=".45" marker-end="url(#pa-ar)">
-                <line x1="170" y1="48" x2="170" y2="62" /><line x1="170" y1="106" x2="170" y2="120" />
-                <line x1="170" y1="164" x2="170" y2="178" /><line x1="170" y1="222" x2="170" y2="236" />
-              </g>
-              <rect x="30" y="8" width="280" height="40" rx="10" fill="var(--bg-soft)" stroke="var(--line)" />
-              <text x="170" y="32" fill="var(--fg-muted)">Barcode · QR · manual text</text>
-
-              <rect x="30" y="66" width="280" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity=".45" />
-              <text x="170" y="83" fill="var(--fg)">FastAPI — async pipeline</text>
-              <text x="170" y="97" fill="var(--fg-faint)" font-size="10" font-weight="500">asyncio · aiohttp · LRU cache</text>
-
-              <rect x="30" y="124" width="280" height="40" rx="10" fill="var(--bg-soft)" stroke="var(--line)" />
-              <text x="170" y="148" fill="var(--fg-muted)">OpenFoodFacts — product data</text>
-
-              <rect x="30" y="182" width="280" height="40" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity=".45" />
-              <text x="170" y="199" fill="var(--fg)">Mistral via Ollama — local LLM</text>
-              <text x="170" y="213" fill="var(--fg-faint)" font-size="10" font-weight="500">strict JSON output contract</text>
-
-              <rect x="30" y="240" width="280" height="44" rx="10" fill="var(--bg-soft)" stroke="var(--line)" />
-              <text x="170" y="258" fill="var(--fg-muted)">Pydantic / JSON Schema validation</text>
-              <text x="170" y="273" fill="var(--fg-faint)" font-size="10" font-weight="500">→ safety verdict + reason</text>
-            </g>
-          </svg>
-        </span>
-        <span class="shot-cap">Request pipeline — local LLM behind a validated JSON contract</span>
-        <p>
-          Ingredient-safety analyser built on a local Mistral model served through Ollama.
-          The prompt enforces a strict JSON output contract and every response is validated
-          against a Pydantic schema before it reaches the user, so malformed model output is
-          rejected rather than displayed. Input by manual text or barcode / QR scan.
-        </p>
-        <div class="tags" style="margin-bottom:14px">
-          <span class="tag">Python</span><span class="tag">FastAPI</span>
-          <span class="tag">LLM</span><span class="tag">Ollama</span>
-          <span class="tag">Prompt Engineering</span><span class="tag">Pydantic</span>
-          <span class="tag">asyncio</span>
-        </div>
-        <a href="https://github.com/elifkk14/product-analysis-ai" target="_blank" rel="noopener">View on GitHub →</a>
-      </div>
-
-      <div class="card">
-        <h3>Spades Multiplayer Game</h3>
-        <span class="shot diagram">
-          <svg viewBox="0 0 340 286" role="img" aria-label="Diagram of the server-authoritative design: four browser clients send intents such as a bid or a card play over Socket.IO; the server validates turn order, follow-suit, trump rules and bidding, owns the single game state, rejects illegal moves, and broadcasts the resulting state back to all four clients.">
-            <defs>
-              <marker id="sp-ar" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-                <path d="M0 0 L8 4 L0 8 z" fill="currentColor" opacity=".45" />
-              </marker>
-            </defs>
-            <g font-size="11.5" font-weight="600" text-anchor="middle">
-              <g stroke="currentColor" stroke-opacity=".45" marker-end="url(#sp-ar)">
-                <line x1="170" y1="46" x2="170" y2="62" /><line x1="170" y1="176" x2="170" y2="192" />
-              </g>
-
-              <g fill="var(--bg-soft)" stroke="var(--line)">
-                <rect x="18" y="10" width="70" height="34" rx="9" /><rect x="96" y="10" width="70" height="34" rx="9" />
-                <rect x="174" y="10" width="70" height="34" rx="9" /><rect x="252" y="10" width="70" height="34" rx="9" />
-              </g>
-              <g fill="var(--fg-muted)" font-size="11">
-                <text x="53" y="31">P1</text><text x="131" y="31">P2</text>
-                <text x="209" y="31">P3</text><text x="287" y="31">P4</text>
-              </g>
-              <text x="170" y="58" fill="var(--fg-faint)" font-size="9.5" font-weight="500">intent — bid · play card</text>
-
-              <rect x="18" y="68" width="304" height="102" rx="11" fill="var(--accent-soft)" stroke="var(--accent)" stroke-opacity=".45" />
-              <text x="170" y="88" fill="var(--fg)">Server owns the game state</text>
-              <g fill="var(--fg-muted)" font-size="10" font-weight="500">
-                <text x="170" y="106">validates turn order and follow-suit</text>
-                <text x="170" y="121">enforces trump rules and bidding</text>
-                <text x="170" y="136">resolves tricks and scoring</text>
-              </g>
-              <text x="170" y="157" fill="var(--accent-fg)" font-size="10" font-weight="650">illegal moves rejected server-side</text>
-              <text x="170" y="188" fill="var(--fg-faint)" font-size="9.5" font-weight="500">authoritative state</text>
-
-              <rect x="18" y="198" width="304" height="42" rx="11" fill="var(--bg-soft)" stroke="var(--line)" />
-              <text x="170" y="216" fill="var(--fg-muted)">Broadcast to all four clients</text>
-              <text x="170" y="231" fill="var(--fg-faint)" font-size="10" font-weight="500">no client can fake a move</text>
-
-              <text x="170" y="266" fill="var(--fg-faint)" font-size="10" font-weight="500">Node.js · Express · Socket.IO</text>
-            </g>
-          </svg>
-        </span>
-        <span class="shot-cap">Server-authoritative turn engine — clients send intents, never state</span>
-        <p>
-          Four-player online Spades (Batak) over WebSockets, with room management, bidding,
-          trump and follow-suit enforcement. Clients never hold the game state: they send
-          intents and the server decides, so a modified client cannot cheat.
-        </p>
-        <div class="tags" style="margin-bottom:14px">
-          <span class="tag">Node.js</span><span class="tag">Socket.io</span>
-          <span class="tag">WebSockets</span><span class="tag">JavaScript</span>
-        </div>
-        <a class="demo-btn" href="https://spades-server.vercel.app" target="_blank" rel="noopener">Play the live demo ↗</a>
-        <span style="color:var(--fg-faint)"> &nbsp;·&nbsp; </span>
-        <a href="https://github.com/elifkk14/spades-server" target="_blank" rel="noopener">GitHub →</a>
-      </div>
-    </div>
-
-    <h3 style="font-size:.95rem; font-weight:700; margin:34px 0 4px">Also built</h3>
-    <div class="rv minor">
-      <div class="minor-row">
-        <strong>SmartForm AI</strong>
-        <span class="d">Form analyser with an integrated AI model.</span>
-        <a href="https://github.com/elifkk14/smartform-ai" target="_blank" rel="noopener">GitHub →</a>
-      </div>
-      <div class="minor-row">
-        <strong>Cargo Delivery System</strong>
-        <span class="d">Route optimisation on graph algorithms — Java.</span>
-        <a href="https://github.com/elifkk14/cargo-delivery-system" target="_blank" rel="noopener">GitHub →</a>
-      </div>
-      <div class="minor-row">
-        <strong>Asteroid Hunter</strong>
-        <span class="d">Arcade game with enemy waves and upgrades — Java, OOP.</span>
-        <a href="https://github.com/elifkk14/AsteroidHunter" target="_blank" rel="noopener">GitHub →</a>
-      </div>
-      <div class="minor-row">
-        <strong>Study Planner &amp; Nearest Workspace</strong>
-        <span class="d">Session planner that finds nearby places to work — Flutter, Dart, Firebase.</span>
-        <span style="font-size:.8rem; color:var(--fg-faint); white-space:nowrap">Private repo</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXPERIENCE ============ -->
+<main>
 <section id="work">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">02 — Experience</span>
-      <h2>Experience</h2>
-      <p>R&amp;D in medical AI, plus a backend and DevOps foundation.</p>
+    <div class="section-intro">
+      <h2>Selected work</h2>
+      <p class="muted">Each project is written up the same way: what the problem was, what I did, what I measured and what I changed because of it.</p>
     </div>
-    <div class="rv tl">
-      <div class="item">
-        <div class="item-top">
-          <h3>TED University — research project</h3>
-          <span class="when">Sep 2025 — Present · Ankara</span>
-        </div>
-        <div class="role">AI/ML Research Contributor (volunteer)</div>
-        <p>
-          Contributing to a research project on AI-assisted analysis of neurodegenerative
-          disease, joined through the Department of Computer Engineering. I train 3D deep
-          learning models on brain imaging and work on the preprocessing pipeline, together
-          with a team and in collaboration with neurology and nuclear medicine physicians.
-        </p>
-        <div class="tags">
-          <span class="tag">PyTorch</span><span class="tag">PyTorch Lightning</span>
-          <span class="tag">MONAI</span><span class="tag">MATLAB / SPM</span>
-          <span class="tag">Python</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-top">
-          <h3>Godetya Yapay Zeka ve Mühendislik</h3>
-          <span class="when">Jan 2026 — Feb 2026 · Ankara</span>
-        </div>
-        <div class="role">Software Engineering Intern (R&amp;D)</div>
-        <p>
-          Built the data pipeline for the same research project: downloaded, cleaned and labelled
-          brain MRI from public research cohorts and matched it with amyloid PET, then preprocessed
-          MRI and PET with MATLAB/SPM — coregistration, spatial normalisation, SUVR computation and
-          atlas-based brain masking — and reported the pipeline and data-quality findings to the team.
-        </p>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">MATLAB / SPM</span>
-          <span class="tag">PET / MRI</span><span class="tag">Image Processing</span>
-        </div>
-      </div>
-      <div class="item">
-        <div class="item-top">
-          <h3>Bisoft Bilgi Teknolojileri</h3>
-          <span class="when">Jul 2025 — Aug 2025 · Ankara</span>
-        </div>
-        <div class="role">Backend &amp; DevOps Intern</div>
-        <p>
-          Built an automated PostgreSQL primary/standby high-availability cluster on Docker
-          with WAL streaming replication and pg_basebackup provisioning, automating the setup
-          with Bash. Migrated the cluster to Kubernetes using StatefulSets, PersistentVolumeClaims,
-          ConfigMaps, Secrets and headless Services, then integrated it with the company's
-          existing failover components and tested failover end to end — cutting a 15–30 minute
-          manual takeover to under 10 seconds.
-        </p>
-        <div class="tags">
-          <span class="tag">Kubernetes</span><span class="tag">Docker</span>
-          <span class="tag">Java / Spring</span><span class="tag">PostgreSQL</span>
-          <span class="tag">Streaming Replication</span><span class="tag">High Availability</span>
-          <span class="tag">Bash</span><span class="tag">Git</span><span class="tag">Linux</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ SKILLS ============ -->
-<section class="soft" id="skills">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">03 — Skills</span>
-      <h2>Skills</h2>
-      <p>Tools and technologies I work with day to day.</p>
-    </div>
-    <div class="grid3">
-      <div class="card">
-        <div class="skill-h">AI &amp; Machine Learning</div>
-        <div class="tags">
-          <span class="tag">Deep Learning</span><span class="tag">Computer Vision</span>
-          <span class="tag">CNNs</span><span class="tag">Vision Transformers</span>
-          <span class="tag">3D Medical Image Processing</span><span class="tag">PyTorch</span>
-          <span class="tag">PyTorch Lightning</span><span class="tag">MONAI</span>
-          <span class="tag">NumPy</span><span class="tag">Pandas</span>
-          <span class="tag">Matplotlib</span><span class="tag">Nibabel</span>
-          <span class="tag">MATLAB / SPM</span>
-        </div>
+    <!-- NeuroLit -->
+    <article class="case" id="neurolit">
+      <div class="case-head">
+        <h3>NeuroLit: answers from neuroimaging papers, with sources</h3>
+        <p>Personal project, November 2026. Python, FastAPI, PostgreSQL with pgvector, Docker.</p>
+        <p class="case-links">
+          <a href="https://neurolit-2e56.onrender.com">Try the live demo</a>
+          <a href="https://github.com/elifkk14/neurolit-rag">Read the code</a>
+        </p>
       </div>
-      <div class="card">
-        <div class="skill-h">Backend, Infrastructure &amp; MLOps</div>
-        <div class="tags">
-          <span class="tag">Kubernetes</span><span class="tag">Docker</span>
-          <span class="tag">Java / Spring</span><span class="tag">PostgreSQL</span>
-          <span class="tag">High Availability</span><span class="tag">Streaming Replication</span>
-          <span class="tag">MySQL</span><span class="tag">REST APIs</span>
-          <span class="tag">Bash</span><span class="tag">Git</span><span class="tag">Linux</span>
-          <span class="tag">Hadoop</span>
-        </div>
+      <div class="prose">
+        <p><b>The problem.</b> A language model asked about Alzheimer's imaging will answer confidently whether or not it knows. I wanted a tool that answers only from PubMed abstracts and shows which paper every sentence came from.</p>
+        <p><b>What I built.</b> A retrieval-augmented generation service over 5,000 PubMed abstracts from 2015 to 2026. A question is embedded, the closest passages are found in PostgreSQL, and a language model writes the answer from them. Then the answer is checked: it must match a schema, every sentence must cite a paper, and every cited paper must be one that was actually retrieved. If a check fails, the model gets one more try; if it fails again, the service says it could not answer.</p>
+        <p><b>What I expected, and what I measured.</b> My plan assumed that combining keyword search with vector search would find the right paper more often. I wrote 30 test questions and measured. The first run said otherwise: keyword search was so weak that it pulled the combined method down. The cause was PostgreSQL's built-in ranking, which treats "disease", found in 91% of passages, as just as informative as "gadolinium", found in only 10. I replaced it with a score that gives rare words more weight.</p>
       </div>
-      <div class="card">
-        <div class="skill-h">Languages &amp; Other</div>
-        <div class="tags">
-          <span class="tag">Python</span><span class="tag">Java</span>
-          <span class="tag">C</span><span class="tag">SQL</span>
-          <span class="tag">HTML</span><span class="tag">Flutter</span>
-          <span class="tag">Firebase</span>
-        </div>
-        <div class="skill-h" style="margin-top:18px">Spoken</div>
-        <div class="tags">
-          <span class="tag">Turkish — native</span><span class="tag">English — B2</span>
-          <span class="tag">French — B2</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ EDUCATION ============ -->
-<section id="education">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">04 — Background</span>
-      <h2>Education &amp; certifications</h2>
-    </div>
-    <div class="grid2">
-      <div class="card">
-        <div class="skill-h">Education</div>
-        <div class="row">
-          <div>
-            <strong>TED University — B.Sc. Computer Engineering</strong>
-            <div class="meta">
-              English-medium<br />
-              Relevant coursework: Information Retrieval, Artificial Intelligence,
-              Data Structures &amp; Algorithms, Software Engineering, Signals and Systems
-            </div>
+      <figure>
+        <div class="table-scroll">
+          <table>
+            <caption class="sr">Retrieval results on 30 test questions</caption>
+            <thead>
+              <tr><th scope="col">Search method</th><th scope="col">Right paper in top 5</th><th scope="col">Mean reciprocal rank</th><th scope="col">Search time</th></tr>
+            </thead>
+            <tbody>
+              <tr class="before"><td>Keyword, first version</td><td class="was">0.37</td><td></td><td></td></tr>
+              <tr class="before"><td>Combined, first version</td><td class="was">0.80</td><td></td><td></td></tr>
+              <tr><td>Keyword, rare words weighted</td><td>0.73</td><td>0.588</td><td>39 ms</td></tr>
+              <tr><td>Combined, after the fix</td><td>0.93</td><td>0.800</td><td>43 ms</td></tr>
+              <tr><td><b>Vector only, kept</b></td><td><mark>0.97</mark></td><td><mark>0.831</mark></td><td>3 ms</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption>For each question: does the paper it was written from come back in the top five? Even after the fix, vector search alone stayed the most accurate and more than ten times faster, so it is the default. The gap is one question in 30, so I stopped there instead of tuning the method to my own test set.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p><b>Fitting it on a free server.</b> The first Docker image ran the embedding model with PyTorch and weighed 2.37 GB, too much for a server with 512 MB of memory. I switched to ONNX Runtime after checking that both produce identical vectors, so the stored data and the scores above did not change. The image dropped to 805 MB and runs in about 190 MB of memory.</p>
+        <p><b>Result.</b> On the same 30 questions, 28 got a cited answer. None reached the user with an uncited sentence or a source that had not been retrieved. The project has 60 tests at 84% coverage, and GitHub Actions runs them against a real PostgreSQL database before publishing the image.</p>
+      </div>
+    </article>
+
+    <!-- Bisoft -->
+    <article class="case" id="failover">
+      <div class="case-head">
+        <h3>A database that takes over by itself</h3>
+        <p>Backend and DevOps internship at Bisoft, Ankara, July to August 2025. PostgreSQL, Docker, Kubernetes, Bash.</p>
+      </div>
+      <div class="prose">
+        <p><b>The problem.</b> When the primary PostgreSQL server failed, someone had to notice, connect and promote the standby by hand. That took 15 to 30 minutes, and the application was down the whole time.</p>
+        <p><b>What I did.</b> I built a primary and standby pair kept in sync with WAL streaming replication, with the standby created automatically by <code>pg_basebackup</code> and the setup scripted in Bash. I then moved the cluster to Kubernetes (StatefulSets, persistent volumes, ConfigMaps, Secrets and a headless Service) and connected it to the company's existing failover tools. I did not write those tools; my part was making the cluster work with them and testing failover end to end, again and again.</p>
+      </div>
+
+      <figure>
+        <div class="bars" role="img" aria-label="Time until the standby takes over: 15 to 30 minutes by hand, under 10 seconds automated, drawn to scale.">
+          <div class="bar-row">
+            <div class="bar-label">By hand<span>15 to 30 minutes</span></div>
+            <div class="track"><div class="bar span"></div><div class="bar best"></div></div>
           </div>
-          <span class="when">2022 — 2026</span>
-        </div>
-        <div class="row">
-          <div>
-            <strong>Tevfik Fikret High School</strong>
-            <div class="meta">
-              French–Turkish bilingual program (LabelFrancEducation)
-            </div>
+          <div class="bar-row">
+            <div class="bar-label">Automated<span>under 10 seconds</span></div>
+            <div class="track"><div class="bar auto"></div></div>
           </div>
-          <span class="when">2018 — 2022</span>
         </div>
+        <p class="scale" aria-hidden="true"><span>0</span><span>10 min</span><span>20 min</span><span>30 min</span></p>
+        <figcaption>Drawn to scale. The darker half of the top bar is the best case, 15 minutes. At this scale, 10 seconds is the thin line inside the highlight.</figcaption>
+      </figure>
+    </article>
+
+    <!-- Alzheimer -->
+    <article class="case" id="alzheimers">
+      <div class="case-head">
+        <h3>Deep learning on brain PET and MRI for Alzheimer's disease</h3>
+        <p>University research project and my graduation project, September 2025 to now. First place at Genç Beyinler Yeni Fikirler 2026.</p>
       </div>
-      <div class="card">
-        <div class="skill-h">Certifications</div>
-        <div class="row">
-          <div><strong>Docker Essentials: A Developer Introduction</strong>
-            <div class="meta">IBM</div></div>
-          <span class="when">2025</span>
+      <div class="two">
+        <div class="prose">
+          <p><b>The project.</b> A research team at TED University, working with neurology and nuclear medicine physicians, is applying deep learning to amyloid PET and MRI to support the analysis of Alzheimer's disease. I joined through the Department of Computer Engineering and contribute as a volunteer.</p>
+          <p><b>My part.</b> I built the imaging data pipeline: downloading and cleaning scans from public research cohorts, matching each MRI with its PET scan and clinical labels, and preprocessing both in MATLAB and SPM (registration, spatial normalisation, intensity standardisation and brain masking). When registration failed on some scans, I traced it to wrong image origins and automated the correction. I also train and evaluate the 3D models.</p>
+          <p><b>What is not here.</b> The work is unpublished, so its methods and results stay with the team for now. I am glad to talk about my part in an interview.</p>
+          <p class="used">Tools: Python, PyTorch, PyTorch Lightning, MONAI, ResNet3D, Vision Transformers, MATLAB, SPM, NIfTI, DICOM.</p>
         </div>
-        <div class="row">
-          <div><strong>Software Engineering Specialization</strong>
-            <div class="meta">HKUST via Coursera — 3 courses: Software Design &amp; Project Management ·
-              Implementation &amp; Testing · Modeling Systems with UML</div></div>
-          <span class="when">2025</span>
-        </div>
-        <div class="row">
-          <div><strong>Geleceği Yazan Kadınlar — AI Program</strong>
-            <div class="meta">Turkcell Akademi</div></div>
-          <span class="when">2025</span>
-        </div>
-        <div class="row">
-          <div><strong>Hadoop 101 · Hadoop Foundations Level 1</strong>
-            <div class="meta">IBM / Cognitive Class</div></div>
-          <span class="when">2025</span>
-        </div>
+        <figure class="photo">
+          <picture>
+            <source srcset="images/award-genc-beyinler.webp" type="image/webp" />
+            <img src="images/award-genc-beyinler.jpg" alt="Elif Konak receiving the first-place award at Genç Beyinler Yeni Fikirler 2026" width="1200" height="842" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>First place among more than 100 projects at Genç Beyinler Yeni Fikirler 2026, an inter-university competition held with the Turkish Informatics Association.</figcaption>
+        </figure>
       </div>
+    </article>
+
+    <!-- Product analysis -->
+    <article class="case" id="product-analysis">
+      <div class="case-head">
+        <h3>Ingredient checker with a local language model</h3>
+        <p>Personal project, 2025. Python, FastAPI, Ollama, Pydantic.</p>
+        <p class="case-links"><a href="https://github.com/elifkk14/product-analysis-ai">Read the code</a></p>
+      </div>
+      <div class="prose">
+        <p><b>The problem.</b> Ingredient lists are hard to read, and sending them to a cloud model is not always an option. I wanted a tool that judges whether ingredients are safe with a model running on the same machine.</p>
+        <p><b>What I did.</b> A barcode, QR code or typed list goes to a FastAPI service, which looks the product up on OpenFoodFacts and asks a Mistral model served by Ollama for a verdict. The model must answer in a fixed JSON format, and every answer is validated with Pydantic before it reaches the user.</p>
+      </div>
+      <figure>
+        <ol class="flow">
+          <li><span>Barcode, QR code or typed ingredients</span></li>
+          <li><span>FastAPI service <small>async requests, cached product lookups</small></span></li>
+          <li><span>OpenFoodFacts product data</span></li>
+          <li><span>Mistral on Ollama, on the same machine <small>asked for a fixed JSON format</small></span></li>
+          <li class="check"><span>Pydantic validation <small>malformed answers are rejected, never shown</small></span></li>
+        </ol>
+        <figcaption>The request path. The last step is the point of the design: the model's output is treated as untrusted input until it passes the schema.</figcaption>
+      </figure>
+    </article>
+
+    <div class="smaller">
+      <h3>Smaller projects</h3>
+      <ul class="others">
+        <li><b>Gatherly</b><p>Real-time chat with servers, channels, voice rooms and roles. Node.js, Socket.IO, WebRTC, MongoDB. <a href="https://gatherly-nu-flax.vercel.app/">Open the app</a></p></li>
+        <li><b>Spades, multiplayer</b><p>Four-player card game over WebSockets. The server holds the game state and rejects illegal moves, so a modified client cannot cheat. Node.js, Socket.IO. <a href="https://spades-server.vercel.app">Play it</a> or <a href="https://github.com/elifkk14/spades-server">read the code</a></p></li>
+        <li><b>Cargo delivery routing</b><p>Route optimisation with graph algorithms in Java. <a href="https://github.com/elifkk14/cargo-delivery-system">Read the code</a></p></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="soft" id="contact">
-  <div class="wrap contact-box">
-    <h2>Let's talk</h2>
-    <p>
-      I'm open to Software / ML Engineer roles in Ankara and remote positions.
-      The fastest way to reach me is email — I read everything.
-    </p>
-    <div class="cta" style="justify-content:center">
-      <a class="btn primary" href="mailto:elif.konak@yahoo.com.tr">elif.konak@yahoo.com.tr</a>
-      <a class="btn" href="https://www.linkedin.com/in/elif-konakk/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/elifkk14" target="_blank" rel="noopener">GitHub</a>
+<section id="experience">
+  <div class="wrap">
+    <div class="section-intro"><h2>Experience and education</h2></div>
+    <ol class="timeline">
+      <li>
+        <div class="when">Sep 2025 to now</div>
+        <div>
+          <h3>AI/ML research contributor, volunteer</h3>
+          <p class="where">TED University research project, Ankara</p>
+          <p>Imaging data pipeline and 3D model training for the Alzheimer's project above.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">Jan to Feb 2026</div>
+        <div>
+          <h3>Software engineering intern, R&amp;D</h3>
+          <p class="where">Godetya Yapay Zeka ve Mühendislik, Ankara</p>
+          <p>Built the data pipeline for the same project: collected and cleaned brain MRI from public cohorts, matched it with amyloid PET and preprocessed both with MATLAB and SPM.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">Jul to Aug 2025</div>
+        <div>
+          <h3>Backend and DevOps intern</h3>
+          <p class="where">Bisoft Bilgi Teknolojileri, Ankara</p>
+          <p>PostgreSQL high availability on Kubernetes, described above.</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">2022 to 2026</div>
+        <div>
+          <h3>B.Sc. in Computer Engineering</h3>
+          <p class="where">TED University, Ankara. Taught in English.</p>
+          <p>Courses closest to my work: Information Retrieval, Artificial Intelligence, Data Structures and Algorithms, Signals and Systems.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="tools">
+      <h3>Tools used in the work above</h3>
+      <p><b>Machine learning.</b> PyTorch, PyTorch Lightning, MONAI, scikit-learn, NumPy, pandas, embeddings and retrieval, prompts with checked JSON output.</p>
+      <p><b>Medical imaging.</b> PET, MRI, DICOM, NIfTI, nibabel, MATLAB and SPM, image registration.</p>
+      <p><b>Backend and infrastructure.</b> Python, FastAPI, Java and Spring, PostgreSQL and pgvector, Docker, Kubernetes, GitHub Actions, pytest, Bash, Linux.</p>
+      <p><b>Languages.</b> Turkish (native), English (B2), French (B2).</p>
     </div>
   </div>
 </section>
-
 </main>
 
-<footer>
-  <div class="wrap foot-in">
-    <span>© 2026 Elif Konak · Ankara, Türkiye</span>
-    <div class="foot-links">
-      <a href="https://github.com/elifkk14" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/elif-konakk/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:elif.konak@yahoo.com.tr">Email</a>
-    </div>
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="big"><a href="mailto:elif.konak@yahoo.com.tr">elif.konak@yahoo.com.tr</a></p>
+    <p class="prose">Email is the fastest way to reach me. I send my CV directly to each company, so if you would like it, just ask.</p>
+    <p class="reach"><a href="https://github.com/elifkk14">GitHub</a><a href="https://www.linkedin.com/in/elif-konakk/">LinkedIn</a></p>
   </div>
 </footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // hareket azaltma tercihi: otomatik oynayan videolari durdur, poster kalsin
-  if (reduce) {
-    document.querySelectorAll('video[autoplay]').forEach(function(v){
-      v.removeAttribute('autoplay'); v.removeAttribute('loop'); v.controls = true; v.pause();
-    });
-  }
-
-  // yumusak gorunum
-  if (!reduce && 'IntersectionObserver' in window) {
-    var rio = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
-    document.querySelectorAll('.rv').forEach(function(el){ rio.observe(el); });
-  } else {
-    document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
-  }
-
-  // menude aktif bolum
-  var links = [].slice.call(document.querySelectorAll('.nav-links a'));
-  var map = {};
-  links.forEach(function(a){
-    var t = document.querySelector(a.getAttribute('href'));
-    if (t) map[t.id] = a;
-  });
-  if ('IntersectionObserver' in window) {
-    var nio = new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if (e.isIntersecting) {
-          links.forEach(function(l){ l.classList.remove('on'); });
-          if (map[e.target.id]) map[e.target.id].classList.add('on');
-        }
-      });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-    Object.keys(map).forEach(function(id){ nio.observe(document.getElementById(id)); });
-  }
-})();
-</script>
 </body>
 </html>
