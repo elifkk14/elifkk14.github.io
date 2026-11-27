@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Medical imaging, retrieval systems and reliable backends." />
 <meta name="twitter:image" content="https://elifkk14.github.io/images/og-card.png?v=3" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234a32b0'/><text x='50' y='67' font-family='Inter,Arial,sans-serif' font-weight='700' font-size='50' text-anchor='middle' fill='white'>ek</text></svg>" />
-<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('anim')}catch(e){}</script>
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window)document.documentElement.classList.add('anim');addEventListener('error',function(){document.documentElement.classList.remove('anim')})}catch(e){}</script>
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
 <style>
   /* Inter, self-hosted and subset (see README). Labels use the system monospace. */
@@ -42,7 +42,7 @@
     --sheet:#ffffff;
     --ink:#17161b;
     --ink-2:#46444d;
-    --ink-3:#6e6b74;
+    --ink-3:#5f5c66;
     --line:color-mix(in srgb,#17161b 11%,transparent);
     --line-2:color-mix(in srgb,#17161b 22%,transparent);
     --signal:#4a32b0;          /* deep PET violet: links, the button, the signal card */
@@ -107,12 +107,20 @@
   header.top ul{list-style:none; margin:0; padding:0; display:flex; gap:1.6rem; font-size:.95rem}
   header.top ul a{color:var(--ink-2); text-decoration:none}
   header.top ul a:hover{color:var(--ink)}
+  header.top ul{align-items:center}
+  header.top .ico a{display:grid; place-items:center; width:2rem; height:2rem; border-radius:50%; border:1px solid var(--line-2); color:var(--ink-2)}
+  header.top .ico a:hover{color:var(--signal); border-color:var(--signal)}
+  header.top .ico + .ico{margin-left:-.9rem}
 
   /* ---------- intro ---------- */
   .intro{display:grid; gap:3rem; padding:4rem 0 3.5rem; align-items:center}
   @media (min-width:1000px){ .intro{grid-template-columns:minmax(0,1fr) 26rem; gap:4.5rem; padding:5.5rem 0 4.5rem} }
-  .status{display:inline-flex; align-items:center; gap:.55rem; background:var(--sheet); border:1px solid var(--line); border-radius:99px; padding:.35rem .85rem .35rem .7rem; font-size:.86rem; color:var(--ink-2); margin-bottom:1.6rem}
-  .status::before{content:""; width:.5rem; height:.5rem; border-radius:50%; background:var(--live); box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 22%,transparent)}
+  .status{display:inline-flex; align-items:center; gap:.55rem; background:var(--sheet); border:1px solid var(--line); border-radius:99px; padding:.35rem .85rem .35rem .7rem; font-size:.86rem; color:var(--ink-2); margin-bottom:1.6rem; border-radius:14px; line-height:1.35}
+  .status b{font-weight:600; color:var(--ink)}
+  .status > span > span{white-space:nowrap}
+  .status > span > span::before{content:"·"; margin:0 .4rem; color:var(--ink-3)}
+  @media (max-width:640px){ .status{align-items:flex-start} .status::before{margin-top:.4rem} .status > span > span{display:block; white-space:normal} .status > span > span::before{content:none} }
+  .status::before{content:""; flex:none; width:.5rem; height:.5rem; border-radius:50%; background:var(--live); box-shadow:0 0 0 3px color-mix(in srgb,var(--live) 22%,transparent)}
   .intro h1{margin-bottom:1.4rem; max-width:18ch}
   .intro .lede{font-size:1.2rem; line-height:1.55; color:var(--ink-2); max-width:34rem; margin-bottom:2rem}
   .actions{display:flex; flex-wrap:wrap; align-items:center; gap:.8rem 1.4rem}
@@ -130,7 +138,7 @@
   .demo .bar{display:flex; align-items:center; gap:.45rem; padding:.6rem .9rem; border-bottom:1px solid var(--line); font-size:.78rem; color:var(--ink-3); background:var(--paper)}
   .demo .bar i{width:.55rem; height:.55rem; border-radius:50%; background:var(--line-2)}
   .demo .bar b{margin-left:.5rem; color:var(--ink-2); font-weight:550; font-family:var(--mono); font-size:.74rem}
-  .demo .bar em{margin-left:auto; font-style:normal; color:var(--live); font-weight:600}
+  .demo .bar em{margin-left:auto; font-style:normal; color:var(--ink-2); font-weight:500; white-space:nowrap}
   .demo .view{display:block; height:30rem; overflow:hidden; position:relative}
   .demo .view::after{content:""; position:absolute; inset:auto 0 0 0; height:5rem; background:linear-gradient(to bottom,transparent,var(--sheet))}
   .demo img{display:block; width:100%; height:auto}
@@ -144,14 +152,15 @@
   .stats a:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
   .stats .num{font-size:clamp(2.2rem,4vw,3rem); font-weight:750; letter-spacing:-.045em; line-height:1; margin:1.4rem 0 .2rem; font-variant-numeric:tabular-nums}
   .stats del{display:block; width:fit-content; font-size:1rem; font-weight:500; letter-spacing:0; color:var(--ink-3); text-decoration-thickness:1.5px; margin-bottom:.35rem}
+  .stats .of{display:block; font-size:1rem; font-weight:500; letter-spacing:0; color:var(--ink-2); margin-top:.45rem}
   .stats p{margin:0; color:var(--ink-2); font-size:.95rem}
   .stats .go{margin-top:auto; padding-top:1.2rem; font-size:.9rem; font-weight:600}
   .stats .go span{display:inline-block; transition:transform .2s var(--ease)}
   .stats a:hover .go span{transform:translateX(4px)}
   .stats .s-signal a{background:var(--signal); border-color:var(--signal); color:var(--on-signal)}
-  .stats .s-signal .label,.stats .s-signal del,.stats .s-signal p{color:color-mix(in srgb,var(--on-signal) 78%,transparent)}
+  .stats .s-signal .label,.stats .s-signal del,.stats .s-signal p{color:color-mix(in srgb,var(--on-signal) 90%,transparent)}
   .stats .s-ink a{background:var(--ink); border-color:var(--ink); color:var(--paper)}
-  .stats .s-ink .label,.stats .s-ink del,.stats .s-ink p{color:color-mix(in srgb,var(--paper) 68%,transparent)}
+  .stats .s-ink .label,.stats .s-ink del,.stats .s-ink p{color:color-mix(in srgb,var(--paper) 82%,transparent)}
 
 
   /* ---------- big section titles ---------- */
@@ -333,51 +342,32 @@
   footer .big{font-size:clamp(1.25rem,3vw,2rem); font-weight:600; letter-spacing:-.025em; margin:0 0 1rem; overflow-wrap:anywhere}
   footer .big a{color:var(--paper); text-decoration-thickness:1.5px; text-decoration-color:color-mix(in srgb,var(--paper) 40%,transparent)}
   footer .big a:hover{text-decoration-color:var(--paper)}
-  footer .muted{color:color-mix(in srgb,var(--paper) 68%,transparent)}
+  footer .muted{color:color-mix(in srgb,var(--paper) 82%,transparent)}
   footer .reach{display:flex; flex-wrap:wrap; gap:.6rem; margin:1.8rem 0 0}
   footer .reach a{color:var(--paper); text-decoration:none; font-weight:600; font-size:.92rem; border:1px solid color-mix(in srgb,var(--paper) 30%,transparent); padding:.5rem .95rem; border-radius:99px}
   footer .reach a:hover{background:var(--paper); color:var(--ink)}
   footer .fine{margin:1.4rem 0 0; color:var(--ink-3); font-size:.82rem}
 
   /* ---------- motion while scrolling (only with JS and when motion is allowed: html.anim) ---------- */
-  .progress{position:fixed; top:0; left:0; right:0; height:3px; z-index:20; pointer-events:none; background:linear-gradient(90deg,var(--signal),#d9452b 72%,var(--mark)); transform-origin:left; transform:scaleX(var(--sp,0))}
-  .anim .rv{opacity:0; transform:translateY(30px); transition:opacity .9s var(--ease),transform .9s var(--ease); transition-delay:calc(var(--i,0) * 90ms)}
-  .anim article.case.rv{transform:translateY(56px) scale(.985)}
-  .anim .rv.in{opacity:1; transform:none}
-  .anim .kids > *{opacity:0; transform:translateY(18px); transition:opacity .75s var(--ease),transform .75s var(--ease); transition-delay:calc(var(--i,0) * 110ms + 120ms)}
-  .anim .kids.in > *{opacity:1; transform:none}
-  .display{overflow:hidden; padding-bottom:.14em; margin-bottom:-.14em}
+  .progress{position:fixed; top:0; left:0; right:0; height:3px; z-index:20; pointer-events:none; background:var(--signal); transform-origin:left; transform:scaleX(var(--sp,0))}
+  /* Short and subtle: content is never invisible. Starts at 60% opacity, settles within 300 ms. */
+  .anim .rv,.anim .kids > *{opacity:.6; transform:translateY(8px); transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .anim .rv.in,.anim .kids.in > *{opacity:1; transform:none}
+  .display{padding-bottom:.14em; margin-bottom:-.14em}
   .display .m{display:inline-block}
-  .anim .display .m{transform:translateY(110%); transition:transform 1.1s var(--ease)}
-  .anim .display.in .m{transform:none}
-  .anim .sec-head p{opacity:0; transform:translateY(14px); transition:opacity .8s var(--ease) .35s,transform .8s var(--ease) .35s}
-  .anim .sec-head.in p{opacity:1; transform:none}
-  /* stat cards: the old value is struck out, then the new one arrives */
-  .anim .stats del{text-decoration:none; background:linear-gradient(currentColor,currentColor) 0 58%/0 1.5px no-repeat; transition:background-size .6s var(--ease); transition-delay:calc(var(--i,0) * 90ms + .55s)}
-  .anim .stats .in del{background-size:100% 1.5px}
-  .anim .stats .new{display:inline-block; opacity:0; transform:translateY(.35em); transition:opacity .7s var(--ease),transform .7s var(--ease); transition-delay:calc(var(--i,0) * 90ms + 1s)}
-  .anim .stats .in .new{opacity:1; transform:none}
-  /* to-scale bars grow from zero */
-  .anim .bars .b.span,.anim .bars .b.best{transform:scaleX(0); transform-origin:left; transition:transform 1.6s var(--ease)}
-  .anim .bars .b.best{transition-delay:.25s}
+  /* to-scale bars grow quickly */
+  .anim .bars .b.span,.anim .bars .b.best{transform:scaleX(.6); transform-origin:left; transition:transform .3s var(--ease)}
   .anim .bars.in .b.span,.anim .bars.in .b.best{transform:none}
-  .anim .bars .b.auto{opacity:0; transition:opacity .5s ease 1.7s}
-  .anim .bars.in .b.auto{opacity:1}
-  /* table: rows slide in, the deciding numbers get highlighted last */
-  .anim .tbl tbody tr{opacity:0; transform:translateX(-14px); transition:opacity .6s var(--ease),transform .6s var(--ease); transition-delay:calc(var(--i,0) * 130ms + .1s)}
-  .anim .tbl.in tbody tr{opacity:1; transform:none}
-  .anim .tbl mark{background:linear-gradient(var(--mark),var(--mark)) 0 0/0 100% no-repeat; transition:background-size .7s var(--ease) 1s}
+  /* the deciding numbers in the table get highlighted */
+  .anim .tbl mark{background:linear-gradient(var(--mark),var(--mark)) 0 0/0 100% no-repeat; transition:background-size .3s var(--ease) .15s}
   .anim .tbl.in mark{background-size:100% 100%}
-  /* request path: one step after another */
-  .anim .flow li{opacity:0; transform:translateY(10px); transition:opacity .55s var(--ease),transform .55s var(--ease); transition-delay:calc(var(--i,0) * 170ms + .1s)}
-  .anim .flow.in li{opacity:1; transform:none}
   /* intro arrives once on load */
-  @keyframes heroIn{from{opacity:0; transform:translateY(22px)}}
-  .anim .intro > div > *,.anim .demo{animation:heroIn 1s var(--ease) both}
-  .anim .intro > div > :nth-child(2){animation-delay:.08s}
-  .anim .intro > div > :nth-child(3){animation-delay:.16s}
-  .anim .intro > div > :nth-child(4){animation-delay:.24s}
-  .anim .demo{animation-delay:.3s}
+  @keyframes heroIn{from{opacity:.6; transform:translateY(8px)}}
+  .anim .intro > div > *,.anim .demo{animation:heroIn .3s var(--ease) both}
+  .anim .intro > div > :nth-child(2){animation-delay:0s}
+  .anim .intro > div > :nth-child(3){animation-delay:0s}
+  .anim .intro > div > :nth-child(4){animation-delay:0s}
+  .anim .demo{animation-delay:0s}
   /* the demo screenshot drifts slowly so the whole answer is seen */
   @keyframes drift{0%,12%{transform:none} 88%,100%{transform:translateY(-14%)}}
   .anim .demo img{animation:drift 14s ease-in-out 1.5s infinite alternate}
@@ -430,21 +420,23 @@
     <nav aria-label="Main">
       <a class="who" href="#top">
         <span class="avatar" aria-hidden="true">ek</span>
-        <span><b>Elif Konak</b><small>Machine learning engineer<span>/</span>Ankara</small></span>
+        <span><b>Elif Konak</b><small>Machine learning engineer<span>/</span>2026&nbsp;graduate<span>/</span>Ankara</small></span>
       </a>
       <ul>
         <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="ico"><a href="https://github.com/elifkk14" aria-label="GitHub"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a></li>
+        <li class="ico"><a href="https://www.linkedin.com/in/elif-konakk/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></li>
       </ul>
     </nav>
   </header>
 
   <div class="intro">
     <div>
-      <p class="status">Open to ML and backend roles</p>
-      <h1>I build machine learning for medical imaging and search, and the backend that keeps it running.</h1>
-      <p class="lede">I'm Elif Konak, a machine learning engineer in Ankara and a 2026 Computer Engineering graduate of TED University. Before I decide how something should work, I measure it.</p>
+      <p class="status"><span><b>Open to junior ML and backend roles</b> <span>Ankara, hybrid or remote · available now</span></span></p>
+      <h1>I build ML systems for medical imaging and retrieval, and the backend that keeps them running.</h1>
+      <p class="lede">I'm Elif Konak, a Computer Engineering graduate of TED University, based in Ankara. Before I decide how something should work, I measure it.</p>
       <p class="actions">
         <a class="button" href="https://neurolit-2e56.onrender.com">Ask NeuroLit a question <span class="arr" aria-hidden="true">→</span></a>
         <a class="plain" href="#neurolit">How I built and measured it</a>
@@ -453,7 +445,7 @@
     </div>
     <figure class="demo">
       <a href="https://neurolit-2e56.onrender.com" aria-label="Open the NeuroLit live demo">
-        <span class="bar"><i></i><i></i><i></i><b>neurolit-2e56.onrender.com</b><em>● live</em></span>
+        <span class="bar"><i></i><i></i><i></i><b>neurolit-2e56.onrender.com</b><em>wakes in ~1 min</em></span>
         <span class="view">
           <picture>
             <source srcset="images/neurolit-answer.webp" type="image/webp" />
@@ -465,7 +457,7 @@
     </figure>
   </div>
 
-  <ul class="stats" aria-label="Three measured changes from the projects below">
+  <ul class="stats" aria-label="Highlights from the projects below">
     <li class="s-signal rv"><a href="#failover">
       <span class="label">Bisoft · database failover</span>
       <span class="num"><del>15–30 min</del><span class="new">under 10 s</span></span>
@@ -478,10 +470,10 @@
       <p>Small enough to run on a free server with 512 MB of memory.</p>
       <span class="go">Read the case <span aria-hidden="true">→</span></span>
     </a></li>
-    <li class="rv"><a href="#neurolit">
-      <span class="label">NeuroLit · keyword search</span>
-      <span class="num"><del>0.37</del><span class="new">0.73</span></span>
-      <p>How often keyword search puts the right paper in the top five.</p>
+    <li class="rv"><a href="#alzheimers">
+      <span class="label">Award · Genç Beyinler Yeni Fikirler 2026</span>
+      <span class="num"><span class="new">1st</span><span class="of">of 100+ projects</span></span>
+      <p>For the Alzheimer's PET and MRI project. TED University and the Turkish Informatics Association.</p>
       <span class="go">Read the case <span aria-hidden="true">→</span></span>
     </a></li>
   </ul>
@@ -871,9 +863,10 @@
     <div class="tools">
       <h3>Tools used in the work above</h3>
       <dl class="kids">
-        <div><dt class="label">Machine learning</dt><dd>PyTorch, PyTorch Lightning, MONAI, scikit-learn, NumPy, pandas, embeddings and retrieval, prompts with checked JSON output.</dd></div>
+        <div><dt class="label">Machine learning</dt><dd>PyTorch, PyTorch Lightning, MONAI, scikit-learn, NumPy, pandas.</dd></div>
+        <div><dt class="label">LLMs and retrieval</dt><dd>RAG, LLM output validation (Pydantic, JSON Schema), embeddings, pgvector, hybrid search (IDF-weighted keyword + vector, RRF), retrieval evaluation (Recall@5, MRR), Groq, Ollama.</dd></div>
         <div><dt class="label">Medical imaging</dt><dd>PET, MRI, DICOM, NIfTI, nibabel, MATLAB and SPM, image registration.</dd></div>
-        <div><dt class="label">Backend and infrastructure</dt><dd>Python, FastAPI, Java and Spring, PostgreSQL and pgvector, Docker, Kubernetes, GitHub Actions, pytest, Bash, Linux.</dd></div>
+        <div><dt class="label">Backend and infrastructure</dt><dd>Python, FastAPI, REST APIs, Java and Spring, SQL, PostgreSQL, Docker, Kubernetes, Git, GitHub Actions, pytest, Bash, Linux.</dd></div>
         <div><dt class="label">Languages</dt><dd>Turkish (native), English (B2), French (B2).</dd></div>
       </dl>
     </div>
