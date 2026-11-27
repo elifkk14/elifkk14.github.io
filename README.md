@@ -12,7 +12,7 @@ A deliberately simple, dependency-free single page:
 - Plain HTML + CSS — no framework, no build step
 - No external CSS/JS/font requests; icons are inline SVG
 - Automatic light/dark theme via `prefers-color-scheme`
-- Responsive single-column layout; each project is written up as problem, work, measurement, decision
+- Responsive two-column layout (project details beside the story on wide screens); each project is written up as problem, work, measurement, decision
 - Deployed with GitHub Pages from `main`
 
 ## Structure
