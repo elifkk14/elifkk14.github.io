@@ -784,27 +784,27 @@
     <article class="case rv" id="product-analysis">
       <div class="meta">
         <span class="label">Personal project</span>
-        <h3>Ingredient checker with a local language model</h3>
+        <h3>Labelling product data with a local language model</h3>
         <dl>
           <div><dt class="label">When</dt><dd>2025</dd></div>
-          <div><dt class="label">Built with</dt><dd>Python, FastAPI, Ollama, Pydantic</dd></div>
+          <div><dt class="label">Built with</dt><dd>Python, Ollama, JSON Schema, Pydantic, asyncio, pandas</dd></div>
         </dl>
         <p class="links"><a href="https://github.com/elifkk14/product-analysis-ai">Code ↗</a></p>
       </div>
       <div class="story">
         <div class="prose kids">
-          <p><b>The problem.</b> Ingredient lists are hard to read, and sending them to a cloud model is not always an option. I wanted a tool that judges whether ingredients are safe with a model running on the same machine.</p>
-          <p><b>What I did.</b> A barcode, QR code or typed list goes to a FastAPI service, which looks the product up on OpenFoodFacts and asks a Mistral model served by Ollama for a verdict. The model must answer in a fixed JSON format, and every answer is validated with Pydantic before it reaches the user.</p>
+          <p><b>The problem.</b> An ingredient-safety checker needs labelled data: thousands of real ingredient lists, each marked safe or harmful. Labelling them by hand was not realistic, and sending them to a cloud model was not an option.</p>
+          <p><b>What I did.</b> I built the labelling pipeline. It downloads the OpenFoodFacts and OpenBeautyFacts product dumps, several gigabytes each, and reads them in 100,000-row chunks so memory stays low. Each cleaned ingredient list goes to a Mistral model served by Ollama on the same machine, several requests at a time, and the model must answer in a fixed JSON format. Every answer is checked against a schema before it counts as a label.</p>
         </div>
         <figure>
           <ol class="flow">
-            <li><span>Barcode, QR code or typed ingredients</span></li>
-            <li><span>FastAPI service <small>async requests, cached product lookups</small></span></li>
-            <li><span>OpenFoodFacts product data</span></li>
-            <li><span>Mistral on Ollama, on the same machine <small>asked for a fixed JSON format</small></span></li>
-            <li class="check"><span>Pydantic validation <small>malformed answers are rejected, never shown</small></span></li>
+            <li><span>Product dumps <small>OpenFoodFacts and OpenBeautyFacts, read in chunks</small></span></li>
+            <li><span>Cleaning and balancing <small>duplicates and very short lists removed</small></span></li>
+            <li><span>Mistral on Ollama, on the same machine <small>asked for a fixed JSON format, requests in parallel</small></span></li>
+            <li class="check"><span>Schema validation <small>an answer that fails is recorded as an error, never as a label</small></span></li>
+            <li><span>Labelled dataset</span></li>
           </ol>
-          <figcaption>The request path. The last step is the point of the design: the model's output is treated as untrusted input until it passes the schema.</figcaption>
+          <figcaption>The labelling pipeline. The validation step is the point of the design: the model's output is treated as untrusted input until it passes the schema.</figcaption>
         </figure>
       </div>
     </article>
@@ -814,7 +814,7 @@
       <ul class="others kids">
         <li><b>Gatherly</b><p>Real-time chat with servers, channels, voice rooms and roles. Node.js, Socket.IO, WebRTC, MongoDB. <a href="https://gatherly-nu-flax.vercel.app/">Open the app</a></p></li>
         <li><b>Spades, multiplayer</b><p>Four-player card game over WebSockets. The server holds the game state and rejects illegal moves, so a modified client cannot cheat. <a href="https://spades-server.vercel.app">Play it</a> or <a href="https://github.com/elifkk14/spades-server">read the code</a></p></li>
-        <li><b>Cargo delivery routing</b><p>Route optimisation with graph algorithms in Java. <a href="https://github.com/elifkk14/cargo-delivery-system">Read the code</a></p></li>
+        <li><b>Cargo delivery simulation</b><p>Packages moving between cities in Java, on a stack, queue and linked list written from scratch, checked against four test scenarios. <a href="https://github.com/elifkk14/cargo-delivery-system">Read the code</a></p></li>
       </ul>
     </div>
   </div>
