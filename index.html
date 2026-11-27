@@ -41,7 +41,7 @@
     --paper-2:#efede8;
     --sheet:#ffffff;
     --ink:#17161b;
-    --ink-2:#46444d;
+    --ink-2:#3a3940;
     --ink-3:#5f5c66;
     --line:color-mix(in srgb,#17161b 11%,transparent);
     --line-2:color-mix(in srgb,#17161b 22%,transparent);
@@ -55,6 +55,9 @@
     --page:72rem;
     --prose:41rem;
     --r:18px;
+    --panel:#f2f0ea;           /* panels set into a card: diagrams, tables, flows */
+    --card-line:rgb(23 22 27 / .08);
+    --card-shadow:0 1px 2px rgb(0 0 0 / .04),0 8px 24px rgb(0 0 0 / .04);
     --shadow:0 1px 0 rgb(23 22 27 / .04),0 24px 40px -28px rgb(23 22 27 / .28);
     --ease:cubic-bezier(.2,.7,.2,1);
     color-scheme:light;
@@ -148,7 +151,7 @@
   /* ---------- measured changes: three cards ---------- */
   .stats{list-style:none; margin:0; padding:0; display:grid; gap:1rem}
   @media (min-width:800px){ .stats{grid-template-columns:repeat(3,minmax(0,1fr))} }
-  .stats a{display:flex; flex-direction:column; gap:.4rem; height:100%; padding:1.5rem 1.5rem 1.3rem; border-radius:var(--r); border:1px solid var(--line); background:var(--sheet); color:var(--ink); text-decoration:none; transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+  .stats a{display:flex; flex-direction:column; gap:.4rem; height:100%; padding:1.5rem 1.5rem 1.3rem; border-radius:var(--r); border:1px solid var(--card-line); background:var(--sheet); box-shadow:var(--card-shadow); color:var(--ink); text-decoration:none; position:relative; transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
   .stats a:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
   .stats .num{font-size:clamp(2.2rem,4vw,3rem); font-weight:750; letter-spacing:-.045em; line-height:1; margin:1.4rem 0 .2rem; font-variant-numeric:tabular-nums}
   .stats del{display:block; width:fit-content; font-size:1rem; font-weight:500; letter-spacing:0; color:var(--ink-3); text-decoration-thickness:1.5px; margin-bottom:.35rem}
@@ -159,6 +162,10 @@
   .stats a:hover .go span{transform:translateX(4px)}
   .stats .s-signal a{background:var(--signal); border-color:var(--signal); color:var(--on-signal)}
   .stats .s-signal .label,.stats .s-signal del,.stats .s-signal p{color:color-mix(in srgb,var(--on-signal) 90%,transparent)}
+  .stats .s-award a{background:var(--mark); border-color:color-mix(in srgb,var(--mark) 70%,var(--ink)); color:var(--ink)}
+  .stats .s-award .label,.stats .s-award p,.stats .s-award .of{color:var(--ink-2)}
+  .stats .s-award .label{padding-right:3.2rem}
+  .stats .trophy{position:absolute; top:1.2rem; right:1.2rem; color:var(--ink)}
   .stats .s-ink a{background:var(--ink); border-color:var(--ink); color:var(--paper)}
   .stats .s-ink .label,.stats .s-ink del,.stats .s-ink p{color:color-mix(in srgb,var(--paper) 82%,transparent)}
 
@@ -171,7 +178,7 @@
   .sec-head p{margin:0 0 .4rem; color:var(--ink-2); font-size:1.05rem}
 
   /* ---------- case studies: cards, details on the left, story on the right ---------- */
-  article.case{display:grid; gap:1.5rem 3.5rem; padding:2.6rem; margin-bottom:1.25rem; background:var(--sheet); border:1px solid var(--line); border-radius:22px}
+  article.case{display:grid; gap:1.5rem 3.5rem; padding:2.6rem; margin-bottom:1.25rem; background:var(--sheet); border:1px solid var(--card-line); border-radius:22px; box-shadow:var(--card-shadow)}
   @media (min-width:1000px){ article.case{grid-template-columns:16rem minmax(0,1fr); padding:3rem} .case .meta{position:sticky; top:1.5rem; align-self:start} }
   .meta h3{margin:.6rem 0 1.4rem; font-size:1.45rem; letter-spacing:-.025em}
   .meta dl{margin:0 0 1.4rem; display:grid; gap:.9rem; font-size:.93rem}
@@ -184,7 +191,7 @@
   .story > :last-child{margin-bottom:0}
   .story p b{font-weight:640}
 
-  figure{margin:2rem 0; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:1.4rem 1.5rem 1.1rem}
+  figure{margin:2rem 0; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1.4rem 1.5rem 1.1rem}
   figcaption{font-size:.88rem; color:var(--ink-3); margin-top:.9rem; max-width:var(--prose)}
 
   /* retrieval table */
@@ -212,6 +219,8 @@
   .scale{display:flex; justify-content:space-between; font-family:var(--mono); font-size:.74rem; color:var(--ink-3); margin:.5rem 0 0 10rem; font-variant-numeric:tabular-nums}
 
   /* request path */
+  tr.kept td{background:var(--signal-soft)}
+  tr.kept td:first-child{box-shadow:inset 3px 0 0 var(--signal)}
   .flow{list-style:none; margin:0; padding:0; display:grid; gap:.5rem}
   .flow li{display:grid; grid-template-columns:1rem 1fr; gap:.7rem; align-items:baseline}
   .flow li::before{content:""; width:.55rem; height:.55rem; border:1.5px solid var(--signal); border-radius:50%}
@@ -224,7 +233,7 @@
   .used{font-size:.93rem; color:var(--ink-3)}
 
   /* ---------- Alzheimer's pipeline, animated ---------- */
-  .pipe{padding:0; overflow:hidden; background:var(--sheet)}
+  .pipe{padding:0; overflow:hidden; background:var(--panel)}
   .pipe-top{display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.9rem 1.1rem; border-bottom:1px solid var(--line)}
   .pipe-ctrl{display:flex; gap:.35rem}
   .pipe-ctrl button{font:inherit; font-size:.82rem; font-weight:600; color:var(--ink); background:var(--sheet); border:1px solid var(--line-2); border-radius:99px; height:2rem; min-width:2rem; padding:0 .7rem; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:.35rem}
@@ -288,7 +297,7 @@
   .steps .bar{position:absolute; left:0; right:0; top:-1px; height:2px; background:transparent; overflow:hidden}
   .steps .bar span{display:block; height:100%; width:100%; background:var(--signal); transform:scaleX(0); transform-origin:left}
   .steps .done .bar span{transform:scaleX(1); background:color-mix(in srgb,var(--signal) 35%,transparent)}
-  .steps .is-on{background:var(--paper)}
+  .steps .is-on{background:var(--signal-soft)}
   .steps .is-on .k{color:var(--ink)}
   .steps .is-on .n{color:var(--signal)}
   .steps .is-on .bar span{transform:scaleX(var(--p,1))}
@@ -312,7 +321,7 @@
   .smaller h3{font-size:1.15rem}
   .others{list-style:none; margin:0; padding:0; display:grid; gap:1rem}
   @media (min-width:760px){ .others{grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem} }
-  .others li{background:var(--sheet); border:1px solid var(--line); border-radius:var(--r); padding:1.2rem 1.25rem; transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+  .others li{background:var(--sheet); border:1px solid var(--card-line); box-shadow:var(--card-shadow); border-radius:var(--r); padding:1.2rem 1.25rem; transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
   .others li:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
   .others b{display:block; font-weight:650; margin-bottom:.35rem; letter-spacing:-.01em}
   .others p{margin:0; font-size:.93rem; color:var(--ink-2)}
@@ -332,7 +341,7 @@
   .tools h3{font-size:1.12rem}
   .tools dl{margin:0; display:grid; gap:1rem; max-width:54rem}
   @media (min-width:700px){ .tools dl{grid-template-columns:1fr 1fr} }
-  .tools dl div{background:var(--sheet); border:1px solid var(--line); border-radius:14px; padding:1rem 1.15rem}
+  .tools dl div{background:var(--sheet); border:1px solid var(--card-line); box-shadow:var(--card-shadow); border-radius:14px; padding:1rem 1.15rem}
   .tools dt{margin-bottom:.4rem}
   .tools dd{margin:0; color:var(--ink-2); font-size:.96rem}
 
@@ -470,7 +479,8 @@
       <p>Small enough to run on a free server with 512 MB of memory.</p>
       <span class="go">Read the case <span aria-hidden="true">→</span></span>
     </a></li>
-    <li class="rv"><a href="#alzheimers">
+    <li class="s-award rv"><a href="#alzheimers">
+      <svg class="trophy" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 6h3v1a3 3 0 0 1-3 3M7 6H4v1a3 3 0 0 0 3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="label">Award · Genç Beyinler Yeni Fikirler 2026</span>
       <span class="num"><span class="new">1st</span><span class="of">of 100+ projects</span></span>
       <p>For the Alzheimer's PET and MRI project. Inter-university competition, Turkish Informatics Association (Ankara Branch).</p>
@@ -735,7 +745,7 @@
                 <tr class="before"><td>Combined, first version</td><td class="was">0.80</td><td class="opt"></td><td></td></tr>
                 <tr><td>Keyword, rare words weighted</td><td>0.73</td><td class="opt">0.588</td><td>39 ms</td></tr>
                 <tr><td>Combined, after the fix</td><td>0.93</td><td class="opt">0.800</td><td>43 ms</td></tr>
-                <tr><td><b>Vector only, kept</b></td><td><mark>0.97</mark></td><td class="opt"><mark>0.831</mark></td><td>3 ms</td></tr>
+                <tr class="kept"><td><b>Vector only, kept</b></td><td><mark>0.97</mark></td><td class="opt"><mark>0.831</mark></td><td>3 ms</td></tr>
               </tbody>
             </table>
           </div>
