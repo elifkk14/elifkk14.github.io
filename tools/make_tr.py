@@ -18,6 +18,38 @@ KEEP = {  # identical in both languages
 }
 
 T = {
+    "A language model asked about Alzheimer's imaging answers confidently whether or not it knows. I wanted one that answers only from PubMed abstracts and cites a paper for every sentence.":
+        'Alzheimer görüntülemesi sorulan bir dil modeli, bilse de bilmese de kendinden emin cevap verir. Sadece PubMed özetlerinden cevap veren ve her cümlesine makale kaynağı gösteren bir araç istedim.',
+    'A retrieval-augmented generation service over 5,000 PubMed abstracts from 2015 to 2026: the closest passages are found in PostgreSQL and a language model answers from them. Every answer is checked: it must match a schema, and every sentence must cite a paper that was actually retrieved. If it fails twice, the service says it could not answer.':
+        '2015–2026 arasından 5.000 PubMed özeti üzerinde çalışan bir RAG (retrieval-augmented generation) servisi: en yakın pasajlar PostgreSQL’de bulunuyor ve bir dil modeli cevabı bunlardan yazıyor. Her cevap kontrol ediliyor: bir şemaya uymalı ve her cümle gerçekten getirilmiş bir makaleye atıf yapmalı. İki kez geçemezse servis cevap veremediğini söylüyor.',
+    "A real answer from NeuroLit. The medical findings are the papers', not mine.":
+        'NeuroLit’ten gerçek bir cevap. Tıbbi bulgular makalelere ait, bana değil.',
+    'My plan assumed that adding keyword search to vector search would find the right paper more often. I wrote 30 test questions and measured: keyword search was so weak that it pulled the combined method down. PostgreSQL\'s built-in ranking treated "disease", found in 91% of passages, as just as informative as "gadolinium", found in 10%. I replaced it with a score that gives rare words more weight.':
+        'Planım, vektör aramasına kelime aramasını eklemenin doğru makaleyi daha sık bulacağını varsayıyordu. 30 test sorusu yazıp ölçtüm: kelime araması o kadar zayıftı ki birleşik yöntemi aşağı çekiyordu. PostgreSQL’in yerleşik sıralaması, pasajların %91’inde geçen "disease" kelimesini, sadece %10’unda geçen "gadolinium" kadar bilgilendirici sayıyordu. Onu nadir kelimelere daha fazla ağırlık veren bir puanla değiştirdim.',
+    'Does the paper each question was written from come back in the top five? After the fix, vector search alone was still the most accurate and over ten times faster, so it is the default. The gap is one question in 30, so I stopped instead of tuning to my own test set.':
+        'Her sorunun yazıldığı makale ilk beşte geliyor mu? Düzeltmeden sonra da en isabetli ve on kattan hızlı yöntem tek başına vektör aramasıydı, bu yüzden varsayılan o. Fark 30 soruda bir soru olduğu için yöntemi kendi test setime göre ayarlamak yerine orada durdum.',
+    'The first Docker image ran the embedding model on PyTorch and weighed 2.37 GB, too much for a server with 512 MB of memory. I switched to ONNX Runtime after checking that both give identical vectors, so the stored data and scores did not change. The image dropped to 805 MB and uses about 190 MB of memory.':
+        'İlk Docker imajı embedding modelini PyTorch ile çalıştırıyordu ve 2,37 GB’tı; 512 MB bellekli bir sunucu için fazla. İkisinin aynı vektörleri ürettiğini doğruladıktan sonra ONNX Runtime’a geçtim, böylece saklanan veri ve skorlar değişmedi. İmaj 805 MB’a indi ve yaklaşık 190 MB bellek kullanıyor.',
+    'Tested.':
+        'Testler.',
+    '60 tests at 84% coverage. GitHub Actions runs them against a real PostgreSQL database before publishing the image.':
+        '%84 kapsamlı 60 test. GitHub Actions, imajı yayımlamadan önce bunları gerçek bir PostgreSQL veritabanına karşı çalıştırıyor.',
+    'Machine learning · Medical imaging': 'Makine öğrenmesi · Medikal görüntüleme',
+    'Machine learning · Retrieval': 'Makine öğrenmesi · Bilgi erişimi',
+    'Backend · Infrastructure': 'Backend · Altyapı',
+    'Machine learning · LLMs': 'Makine öğrenmesi · LLM',
+    'Hiring for ML?': 'ML pozisyonu için:',
+    "Start with the Alzheimer's project": 'Alzheimer projesiyle başlayın',
+    '. Hiring for backend?': '. Backend pozisyonu için:',
+    'Start with the failover case': 'failover projesiyle başlayın',
+    "Award · Alzheimer's project": 'Ödül · Alzheimer projesi',
+    'Genç Beyinler Yeni Fikirler 2026, Turkish Informatics Association (Ankara Branch).': 'Genç Beyinler Yeni Fikirler 2026, Türkiye Bilişim Derneği (Ankara Şubesi).',
+    'See my work': 'Projelerime bak',
+    "Alzheimer's PET and MRI project. Turkish Informatics Association, Ankara Branch.": 'Alzheimer PET ve MRI projesi. Türkiye Bilişim Derneği Ankara Şubesi.',
+    'PostgreSQL on Kubernetes takes over by itself.': 'Kubernetes üzerindeki PostgreSQL kendiliğinden devralıyor.',
+    'NeuroLit · cited answers': 'NeuroLit · kaynaklı cevaplar',
+    'Test questions answered with sources. No uncited sentence reached the user.': 'Test sorusu kaynaklarıyla cevaplandı. Kullanıcıya kaynaksız tek cümle ulaşmadı.',
+    'Fits a free server with 512 MB of memory.': '512 MB bellekli ücretsiz bir sunucuya sığıyor.',
     "Built the data pipeline for the Alzheimer's project: public-cohort MRI and PET to training-ready pairs (MATLAB, SPM), documented in reports.":
         'Alzheimer projesinin veri hattını kurdum: açık kohortlardaki MRI ve PET taramalarını eğitime hazır çiftlere dönüştürdüm (MATLAB, SPM) ve raporlarla belgeledim.',
     'Outcome': 'Sonuç',

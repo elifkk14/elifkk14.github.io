@@ -42,10 +42,6 @@
 <div class="wrap" id="top">
   <header class="top">
     <nav aria-label="Ana menü">
-      <a class="who" href="#top">
-        <span class="avatar" aria-hidden="true">ek</span>
-        <span><b>Elif Konak</b><small>Makine öğrenmesi mühendisi<span>/</span>Ankara</small></span>
-      </a>
       <ul>
         <li><a href="#work">Projeler</a></li>
         <li><a href="#experience">Deneyim</a></li>
@@ -59,49 +55,41 @@
 
   <div class="intro">
     <div>
+      <p class="name">Elif Konak</p>
       <p class="status"><span><b>Junior ML ve backend rollerine açığım</b> <span>Ankara, hibrit ya da uzaktan · hemen başlayabilirim</span></span></p>
       <h1>Makine öğrenmesi sistemleri ve onları ayakta tutan backend’i geliştiriyorum.</h1>
       <p class="lede">TED Üniversitesi Bilgisayar Mühendisliği, 2026 mezunu. Son işlerim: beyin MRI ve PET üzerinde 3B modeller, kaynak gösteren bir arama servisi ve Kubernetes üzerinde PostgreSQL failover. Bir şeyin nasıl çalışması gerektiğine karar vermeden önce ölçerim.</p>
       <p class="actions">
-        <a class="button" href="https://neurolit-2e56.onrender.com">NeuroLit’e bir soru sor <span class="arr" aria-hidden="true">→</span></a>
-        <a class="plain" href="#neurolit">Nasıl kurdum, nasıl ölçtüm</a>
+        <a class="button" href="#work">Projelerime bak <span class="arr" aria-hidden="true">↓</span></a>
+        <a class="plain" href="https://neurolit-2e56.onrender.com">NeuroLit’e bir soru sor <span aria-hidden="true">↗</span></a>
       </p>
+      <p class="route">ML pozisyonu için: <a href="#alzheimers">Alzheimer projesiyle başlayın</a>. Backend pozisyonu için: <a href="#failover">failover projesiyle başlayın</a>.</p>
     </div>
-    <figure class="demo">
-      <a href="https://neurolit-2e56.onrender.com" aria-label="NeuroLit canlı demosunu aç">
-        <span class="bar"><i></i><i></i><i></i><b>neurolit-2e56.onrender.com</b><em>~1 dk’da uyanır</em></span>
-        <span class="view">
-          <picture>
-            <source srcset="../images/neurolit-answer.webp" type="image/webp" />
-            <img src="../images/neurolit-answer.jpg" alt="NeuroLit’in FDG-PET’in Alzheimer hastalığını frontotemporal demanstan ayırıp ayıramayacağı sorusuna verdiği cevap; numaralı atıflar ve altta PubMed kaynakları" width="1300" height="1741" decoding="async" />
-          </picture>
-        </span>
-      </a>
-      <figcaption>NeuroLit’ten gerçek bir cevap. 5.000 PubMed özetinden cevap veriyor ve her cümle için bir makale gösteriyor. Tıbbi bulgular makalelere ait, bana değil.</figcaption>
-    </figure>
+    <ul class="stats" aria-label="Aşağıdaki projelerden öne çıkanlar">
+      <li class="s-award"><a href="#alzheimers">
+        <svg class="trophy" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 6h3v1a3 3 0 0 1-3 3M7 6H4v1a3 3 0 0 0 3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="label">Ödül · Alzheimer projesi</span>
+        <span class="num"><span class="new">1.</span><span class="of">100’ü aşkın proje arasında</span></span>
+        <p>Genç Beyinler Yeni Fikirler 2026, Türkiye Bilişim Derneği (Ankara Şubesi).</p>
+      </a></li>
+      <li class="s-signal"><a href="#failover">
+        <span class="label">Bisoft · veritabanı failover</span>
+        <span class="num"><del>15–30 min</del><span class="new">10 sn altı</span></span>
+        <p>Kubernetes üzerindeki PostgreSQL kendiliğinden devralıyor.</p>
+      </a></li>
+      <li class="s-sheet"><a href="#neurolit">
+        <span class="label">NeuroLit · kaynaklı cevaplar</span>
+        <span class="num"><span class="new">28/30</span></span>
+        <p>Test sorusu kaynaklarıyla cevaplandı. Kullanıcıya kaynaksız tek cümle ulaşmadı.</p>
+      </a></li>
+      <li class="s-ink"><a href="#neurolit">
+        <span class="label">NeuroLit · Docker imajı</span>
+        <span class="num"><del>2.37 GB</del><span class="new">805 MB</span></span>
+        <p>512 MB bellekli ücretsiz bir sunucuya sığıyor.</p>
+      </a></li>
+    </ul>
   </div>
 
-  <ul class="stats" aria-label="Aşağıdaki projelerden öne çıkanlar">
-    <li class="s-signal rv"><a href="#failover">
-      <span class="label">Bisoft · veritabanı failover</span>
-      <span class="num"><del>15–30 min</del><span class="new">10 sn altı</span></span>
-      <p>Yedek sunucu artık elle devreye alınmak yerine kendiliğinden devralıyor.</p>
-      <span class="go">Projeyi oku <span aria-hidden="true">→</span></span>
-    </a></li>
-    <li class="s-ink rv"><a href="#neurolit">
-      <span class="label">NeuroLit · Docker imajı</span>
-      <span class="num"><del>2.37 GB</del><span class="new">805 MB</span></span>
-      <p>512 MB belleği olan ücretsiz bir sunucuda çalışacak kadar küçük.</p>
-      <span class="go">Projeyi oku <span aria-hidden="true">→</span></span>
-    </a></li>
-    <li class="s-award rv"><a href="#alzheimers">
-      <svg class="trophy" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 6h3v1a3 3 0 0 1-3 3M7 6H4v1a3 3 0 0 0 3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span class="label">Ödül · Genç Beyinler Yeni Fikirler 2026</span>
-      <span class="num"><span class="new">1.</span><span class="of">100’ü aşkın proje arasında</span></span>
-      <p>Alzheimer PET ve MRI projesiyle. Üniversiteler arası yarışma, Türkiye Bilişim Derneği (Ankara Şubesi).</p>
-      <span class="go">Projeyi oku <span aria-hidden="true">→</span></span>
-    </a></li>
-  </ul>
 </div>
 
 <main>
@@ -114,6 +102,7 @@
 
     <article class="case rv" id="alzheimers">
       <div class="meta">
+        <span class="area">Makine öğrenmesi · Medikal görüntüleme</span>
         <span class="label">Araştırma · bitirme projesi</span>
         <h3>Alzheimer hastalığı için beyin PET ve MRI üzerinde derin öğrenme</h3>
         <dl>
@@ -334,6 +323,7 @@
 
     <article class="case rv" id="neurolit">
       <div class="meta">
+        <span class="area">Makine öğrenmesi · Bilgi erişimi</span>
         <span class="label">Kişisel proje</span>
         <h3>NeuroLit: nörogörüntüleme makalelerinden kaynaklı cevaplar</h3>
         <dl>
@@ -345,9 +335,23 @@
       <div class="story">
         <p class="outcome"><span class="label">Sonuç</span> 30 test sorusunun 28’i kaynaklı cevap aldı, hiçbirinde kaynaksız cümle yok. Ücretsiz bir sunucuda yaklaşık 190 MB bellekle çalışıyor.</p>
         <div class="prose kids">
-          <p><b>Sorun.</b> Alzheimer görüntülemesi sorulan bir dil modeli, bilse de bilmese de kendinden emin cevap verir. Sadece PubMed özetlerinden cevap veren ve her cümlenin hangi makaleden geldiğini gösteren bir araç istedim.</p>
-          <p><b>Ne kurdum.</b> 2015–2026 arasından 5.000 PubMed özeti üzerinde çalışan bir RAG (retrieval-augmented generation) servisi. Soru vektöre çevriliyor, en yakın pasajlar PostgreSQL’de bulunuyor ve bir dil modeli cevabı bu pasajlardan yazıyor. Sonra cevap kontrol ediliyor: bir şemaya uymalı, her cümle bir makaleye atıf yapmalı ve atıf yapılan her makale gerçekten getirilenlerden biri olmalı. Kontrol geçmezse model bir kez daha deniyor; yine geçmezse servis cevap veremediğini söylüyor.</p>
-          <p><b>Ne bekledim, ne ölçtüm.</b> Planım, kelime aramasını vektör aramasıyla birleştirmenin doğru makaleyi daha sık bulacağını varsayıyordu. 30 test sorusu yazdım ve ölçtüm. İlk çalıştırma aksini söyledi: kelime araması o kadar zayıftı ki birleşik yöntemi aşağı çekiyordu. Sebep PostgreSQL’in yerleşik sıralamasıydı: pasajların %91’inde geçen "disease" kelimesini, sadece %10’unda geçen "gadolinium" kadar bilgilendirici sayıyordu. Onu nadir kelimelere daha çok ağırlık veren bir skorla değiştirdim.</p>
+          <p><b>Sorun.</b> Alzheimer görüntülemesi sorulan bir dil modeli, bilse de bilmese de kendinden emin cevap verir. Sadece PubMed özetlerinden cevap veren ve her cümlesine makale kaynağı gösteren bir araç istedim.</p>
+          <p><b>Ne kurdum.</b> 2015–2026 arasından 5.000 PubMed özeti üzerinde çalışan bir RAG (retrieval-augmented generation) servisi: en yakın pasajlar PostgreSQL’de bulunuyor ve bir dil modeli cevabı bunlardan yazıyor. Her cevap kontrol ediliyor: bir şemaya uymalı ve her cümle gerçekten getirilmiş bir makaleye atıf yapmalı. İki kez geçemezse servis cevap veremediğini söylüyor.</p>
+        </div>
+        <figure class="demo">
+          <a href="https://neurolit-2e56.onrender.com" aria-label="NeuroLit canlı demosunu aç">
+            <span class="bar"><i></i><i></i><i></i><b>neurolit-2e56.onrender.com</b><em>~1 dk’da uyanır</em></span>
+            <span class="view">
+              <picture>
+                <source srcset="../images/neurolit-answer.webp" type="image/webp" />
+                <img src="../images/neurolit-answer.jpg" alt="NeuroLit’in FDG-PET’in Alzheimer hastalığını frontotemporal demanstan ayırıp ayıramayacağı sorusuna verdiği cevap; numaralı atıflar ve altta PubMed kaynakları" width="1300" height="1741" decoding="async" />
+              </picture>
+            </span>
+          </a>
+          <figcaption>NeuroLit’ten gerçek bir cevap. Tıbbi bulgular makalelere ait, bana değil.</figcaption>
+        </figure>
+        <div class="prose kids">
+          <p><b>Ne bekledim, ne ölçtüm.</b> Planım, vektör aramasına kelime aramasını eklemenin doğru makaleyi daha sık bulacağını varsayıyordu. 30 test sorusu yazıp ölçtüm: kelime araması o kadar zayıftı ki birleşik yöntemi aşağı çekiyordu. PostgreSQL’in yerleşik sıralaması, pasajların %91’inde geçen "disease" kelimesini, sadece %10’unda geçen "gadolinium" kadar bilgilendirici sayıyordu. Onu nadir kelimelere daha fazla ağırlık veren bir puanla değiştirdim.</p>
         </div>
 
         <figure>
@@ -366,18 +370,19 @@
               </tbody>
             </table>
           </div>
-          <figcaption>Her soru için: sorunun yazıldığı makale ilk beşte geliyor mu? Düzeltmeden sonra bile tek başına vektör araması en isabetlisi ve on kattan fazla hızlı kaldı; bu yüzden varsayılan o. Fark 30 soruda bir soru, o yüzden yöntemi kendi test setime göre ayarlamak yerine orada durdum.</figcaption>
+          <figcaption>Her sorunun yazıldığı makale ilk beşte geliyor mu? Düzeltmeden sonra da en isabetli ve on kattan hızlı yöntem tek başına vektör aramasıydı, bu yüzden varsayılan o. Fark 30 soruda bir soru olduğu için yöntemi kendi test setime göre ayarlamak yerine orada durdum.</figcaption>
         </figure>
 
         <div class="prose kids">
-          <p><b>Ücretsiz bir sunucuya sığdırmak.</b> İlk Docker imajı embedding modelini PyTorch ile çalıştırıyordu ve 2,37 GB’tı; 512 MB belleği olan bir sunucu için fazla. İkisinin birebir aynı vektörleri ürettiğini kontrol ettikten sonra ONNX Runtime’a geçtim; böylece kayıtlı veri de yukarıdaki skorlar da değişmedi. İmaj 805 MB’a indi ve yaklaşık 190 MB bellekle çalışıyor.</p>
-          <p><b>Sonuç.</b> Aynı 30 sorunun 28’i kaynaklı bir cevap aldı. Hiçbiri kullanıcıya kaynaksız bir cümleyle ya da getirilmemiş bir kaynakla ulaşmadı. Projede %84 kapsama ile 60 test var; GitHub Actions imajı yayımlamadan önce bunları gerçek bir PostgreSQL veritabanına karşı çalıştırıyor.</p>
+          <p><b>Ücretsiz bir sunucuya sığdırmak.</b> İlk Docker imajı embedding modelini PyTorch ile çalıştırıyordu ve 2,37 GB’tı; 512 MB bellekli bir sunucu için fazla. İkisinin aynı vektörleri ürettiğini doğruladıktan sonra ONNX Runtime’a geçtim, böylece saklanan veri ve skorlar değişmedi. İmaj 805 MB’a indi ve yaklaşık 190 MB bellek kullanıyor.</p>
+          <p><b>Testler.</b> %84 kapsamlı 60 test. GitHub Actions, imajı yayımlamadan önce bunları gerçek bir PostgreSQL veritabanına karşı çalıştırıyor.</p>
         </div>
       </div>
     </article>
 
     <article class="case rv" id="failover">
       <div class="meta">
+        <span class="area">Backend · Altyapı</span>
         <span class="label">Staj · Bisoft, Ankara</span>
         <h3>Kubernetes üzerinde otomatik PostgreSQL failover</h3>
         <dl>
@@ -411,6 +416,7 @@
 
     <article class="case rv" id="product-analysis">
       <div class="meta">
+        <span class="area">Makine öğrenmesi · LLM</span>
         <span class="label">Kişisel proje</span>
         <h3>Yerel bir dil modeliyle ürün verisi etiketleme</h3>
         <dl>
