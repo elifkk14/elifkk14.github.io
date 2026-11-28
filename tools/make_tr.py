@@ -18,9 +18,11 @@ KEEP = {  # identical in both languages
 }
 
 T = {
+    "Built the data pipeline for the Alzheimer's project: public-cohort MRI and PET to training-ready pairs (MATLAB, SPM), documented in reports.":
+        'Alzheimer projesinin veri hattını kurdum: açık kohortlardaki MRI ve PET taramalarını eğitime hazır çiftlere dönüştürdüm (MATLAB, SPM) ve raporlarla belgeledim.',
     'Outcome': 'Sonuç',
-    'Built the pipeline that turns raw public-cohort scans into training-ready PET–MRI pairs. First place, Genç Beyinler Yeni Fikirler 2026.':
-        'Açık kohortlardaki ham taramaları eğitime hazır PET–MRI çiftlerine dönüştüren veri hattını kurdum. Genç Beyinler Yeni Fikirler 2026’da birincilik.',
+    'Built the pipeline that turns raw public-cohort scans into training-ready PET–MRI pairs, and automated the origin fix that unblocked scans failing registration.':
+        'Açık kohortlardaki ham taramaları eğitime hazır PET–MRI çiftlerine dönüştüren veri hattını kurdum; kayıt hatası veren taramaları kurtaran orijin düzeltmesini otomatikleştirdim.',
     '28 of 30 test questions got a cited answer, none with an uncited sentence. Runs in about 190 MB on a free server.':
         '30 test sorusunun 28’i kaynaklı cevap aldı, hiçbirinde kaynaksız cümle yok. Ücretsiz bir sunucuda yaklaşık 190 MB bellekle çalışıyor.',
     'Recovery went from 15–30 minutes by hand to under 10 seconds, with no one involved.':
