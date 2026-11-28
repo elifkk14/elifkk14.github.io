@@ -64,7 +64,6 @@
       <p class="actions">
         <a class="button" href="https://neurolit-2e56.onrender.com">Ask NeuroLit a question <span class="arr" aria-hidden="true">→</span></a>
         <a class="plain" href="#neurolit">How I built and measured it</a>
-        <small>The live demo runs on a free server, so the first answer can take about a minute.</small>
       </p>
     </div>
     <figure class="demo">
@@ -123,6 +122,7 @@
         </dl>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Outcome</span> Built the pipeline that turns raw public-cohort scans into training-ready PET–MRI pairs. First place, Genç Beyinler Yeni Fikirler 2026.</p>
         <div class="prose kids">
           <p><b>The project.</b> A research team at TED University, working with neurology and nuclear medicine physicians, is applying deep learning to amyloid PET and MRI to support the analysis of Alzheimer's disease. I joined through the Department of Computer Engineering and contribute as a volunteer.</p>
           <p><b>My part, as an intern.</b> My internship at Godetya in January and February 2026 was on this project. I built the imaging data pipeline that takes the scans all the way to training-ready data: downloading and cleaning scans from public research cohorts, matching each MRI with its PET scan and clinical labels, and preprocessing both in MATLAB and SPM (registration, spatial normalisation, intensity standardisation and brain masking). When registration failed on some scans, I traced it to wrong image origins and automated the correction. I documented each stage in reports for the team.</p>
@@ -342,6 +342,7 @@
         <p class="links"><a href="https://neurolit-2e56.onrender.com">Live demo ↗</a><a href="https://github.com/elifkk14/neurolit-rag">Code ↗</a></p>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Outcome</span> 28 of 30 test questions got a cited answer, none with an uncited sentence. Runs in about 190 MB on a free server.</p>
         <div class="prose kids">
           <p><b>The problem.</b> A language model asked about Alzheimer's imaging will answer confidently whether or not it knows. I wanted a tool that answers only from PubMed abstracts and shows which paper every sentence came from.</p>
           <p><b>What I built.</b> A retrieval-augmented generation service over 5,000 PubMed abstracts from 2015 to 2026. A question is embedded, the closest passages are found in PostgreSQL, and a language model writes the answer from them. Then the answer is checked: it must match a schema, every sentence must cite a paper, and every cited paper must be one that was actually retrieved. If a check fails, the model gets one more try; if it fails again, the service says it could not answer.</p>
@@ -377,7 +378,7 @@
     <article class="case rv" id="failover">
       <div class="meta">
         <span class="label">Internship · Bisoft, Ankara</span>
-        <h3>A database that takes over by itself</h3>
+        <h3>Automatic PostgreSQL failover on Kubernetes</h3>
         <dl>
           <div><dt class="label">Role</dt><dd>Backend and DevOps intern</dd></div>
           <div><dt class="label">When</dt><dd>July to August 2025</dd></div>
@@ -385,6 +386,7 @@
         </dl>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Outcome</span> Recovery went from 15–30 minutes by hand to under 10 seconds, with no one involved.</p>
         <div class="prose kids">
           <p><b>The problem.</b> When the primary PostgreSQL server failed, someone had to notice, connect and promote the standby by hand. That took 15 to 30 minutes, and the application was down the whole time.</p>
           <p><b>What I did.</b> I built a primary and standby pair kept in sync with WAL streaming replication, with the standby created automatically by <code>pg_basebackup</code> and the setup scripted in Bash. I then moved the cluster to Kubernetes (StatefulSets, persistent volumes, ConfigMaps, Secrets and a headless Service) and connected it to the company's existing failover tools. I did not write those tools; my part was making the cluster work with them and testing failover end to end, again and again.</p>
@@ -417,6 +419,7 @@
         <p class="links"><a href="https://github.com/elifkk14/product-analysis-ai">Code ↗</a></p>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Outcome</span> Invalid model answers never become labels: every output passes a schema check first.</p>
         <div class="prose kids">
           <p><b>The problem.</b> An ingredient-safety checker needs labelled data: thousands of real ingredient lists, each marked safe or harmful. Labelling them by hand was not realistic, and sending them to a cloud model was not an option.</p>
           <p><b>What I did.</b> I built the labelling pipeline. It downloads the OpenFoodFacts and OpenBeautyFacts product dumps, several gigabytes each, and reads them in 100,000-row chunks so memory stays low. Each cleaned ingredient list goes to a Mistral model served by Ollama on the same machine, several requests at a time, and the model must answer in a fixed JSON format. Every answer is checked against a schema before it counts as a label.</p>
@@ -457,7 +460,7 @@
         <div>
           <h3>AI/ML research contributor, volunteer</h3>
           <p class="where">TED University research project, Ankara</p>
-          <p>Extended the internship's data pipeline to more public cohorts, and train and evaluate the 3D models, for the Alzheimer's project above.</p>
+          <p>Extended the data pipeline to more public cohorts; train and evaluate 3D deep learning models on PET and MRI.</p>
         </div>
       </li>
       <li>
@@ -473,7 +476,7 @@
         <div>
           <h3>Backend and DevOps intern</h3>
           <p class="where">Bisoft Bilgi Teknolojileri, Ankara</p>
-          <p>PostgreSQL high availability on Kubernetes, described above.</p>
+          <p>Automated PostgreSQL failover on Kubernetes; recovery time from 15–30 minutes to under 10 seconds.</p>
         </div>
       </li>
       <li>

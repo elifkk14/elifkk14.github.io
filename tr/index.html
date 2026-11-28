@@ -65,7 +65,6 @@
       <p class="actions">
         <a class="button" href="https://neurolit-2e56.onrender.com">NeuroLit’e bir soru sor <span class="arr" aria-hidden="true">→</span></a>
         <a class="plain" href="#neurolit">Nasıl kurdum, nasıl ölçtüm</a>
-        <small>Canlı demo ücretsiz bir sunucuda çalışıyor; ilk cevap bir dakika kadar sürebilir.</small>
       </p>
     </div>
     <figure class="demo">
@@ -124,6 +123,7 @@
         </dl>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Sonuç</span> Açık kohortlardaki ham taramaları eğitime hazır PET–MRI çiftlerine dönüştüren veri hattını kurdum. Genç Beyinler Yeni Fikirler 2026’da birincilik.</p>
         <div class="prose kids">
           <p><b>Proje.</b> TED Üniversitesi’nde, nöroloji ve nükleer tıp hekimleriyle birlikte çalışan bir araştırma ekibi, Alzheimer hastalığının analizini desteklemek için amiloid PET ve MRI üzerinde derin öğrenme uyguluyor. Projeye Bilgisayar Mühendisliği Bölümü aracılığıyla katıldım ve gönüllü olarak katkı veriyorum.</p>
           <p><b>Stajyer olarak benim payım.</b> Ocak–Şubat 2026’daki Godetya stajım bu proje üzerineydi. Taramaları eğitime hazır veriye kadar götüren görüntü veri hattını kurdum: herkese açık araştırma kohortlarından taramaları indirip temizlemek, her MRI’ı PET taramasıyla ve klinik etiketleriyle eşleştirmek ve ikisini MATLAB ve SPM ile ön işlemek (çakıştırma, uzaysal normalizasyon, yoğunluk standartlaştırma ve beyin maskeleme). Bazı taramalarda çakıştırma başarısız olunca sebebini yanlış görüntü orijinlerinde buldum ve düzeltmeyi otomatikleştirdim. Her aşamayı ekip için raporlarla belgeledim.</p>
@@ -343,6 +343,7 @@
         <p class="links"><a href="https://neurolit-2e56.onrender.com">Canlı demo ↗</a><a href="https://github.com/elifkk14/neurolit-rag">Kod ↗</a></p>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Sonuç</span> 30 test sorusunun 28’i kaynaklı cevap aldı, hiçbirinde kaynaksız cümle yok. Ücretsiz bir sunucuda yaklaşık 190 MB bellekle çalışıyor.</p>
         <div class="prose kids">
           <p><b>Sorun.</b> Alzheimer görüntülemesi sorulan bir dil modeli, bilse de bilmese de kendinden emin cevap verir. Sadece PubMed özetlerinden cevap veren ve her cümlenin hangi makaleden geldiğini gösteren bir araç istedim.</p>
           <p><b>Ne kurdum.</b> 2015–2026 arasından 5.000 PubMed özeti üzerinde çalışan bir RAG (retrieval-augmented generation) servisi. Soru vektöre çevriliyor, en yakın pasajlar PostgreSQL’de bulunuyor ve bir dil modeli cevabı bu pasajlardan yazıyor. Sonra cevap kontrol ediliyor: bir şemaya uymalı, her cümle bir makaleye atıf yapmalı ve atıf yapılan her makale gerçekten getirilenlerden biri olmalı. Kontrol geçmezse model bir kez daha deniyor; yine geçmezse servis cevap veremediğini söylüyor.</p>
@@ -378,7 +379,7 @@
     <article class="case rv" id="failover">
       <div class="meta">
         <span class="label">Staj · Bisoft, Ankara</span>
-        <h3>Kendiliğinden devralan bir veritabanı</h3>
+        <h3>Kubernetes üzerinde otomatik PostgreSQL failover</h3>
         <dl>
           <div><dt class="label">Rol</dt><dd>Backend ve DevOps stajyeri</dd></div>
           <div><dt class="label">Ne zaman</dt><dd>Temmuz–Ağustos 2025</dd></div>
@@ -386,6 +387,7 @@
         </dl>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Sonuç</span> Kurtarma süresi elle 15–30 dakikadan, kimse müdahale etmeden 10 saniyenin altına indi.</p>
         <div class="prose kids">
           <p><b>Sorun.</b> Ana PostgreSQL sunucusu çöktüğünde birinin bunu fark etmesi, bağlanması ve yedek sunucuyu elle devreye alması gerekiyordu. Bu 15–30 dakika sürüyordu ve uygulama bu süre boyunca kapalı kalıyordu.</p>
           <p><b>Ne yaptım.</b> WAL streaming replication ile eşzamanlı tutulan bir ana–yedek sunucu çifti kurdum; yedek sunucu <code>pg_basebackup</code> ile otomatik oluşturuluyor, kurulum Bash ile betikleniyor. Sonra kümeyi Kubernetes’e taşıdım (StatefulSet’ler, kalıcı birimler, ConfigMap’ler, Secret’lar ve headless Service) ve şirketin mevcut failover araçlarına bağladım. O araçları ben yazmadım; benim payım kümenin onlarla çalışmasını sağlamak ve failover’ı uçtan uca, tekrar tekrar test etmekti.</p>
@@ -418,6 +420,7 @@
         <p class="links"><a href="https://github.com/elifkk14/product-analysis-ai">Kod ↗</a></p>
       </div>
       <div class="story">
+        <p class="outcome"><span class="label">Sonuç</span> Geçersiz model cevapları asla etikete dönüşmez: her çıktı önce şema kontrolünden geçer.</p>
         <div class="prose kids">
           <p><b>Sorun.</b> Bir içerik güvenliği denetleyicisi etiketli veriye ihtiyaç duyar: her biri güvenli ya da zararlı olarak işaretlenmiş binlerce gerçek içerik listesi. Bunları elle etiketlemek gerçekçi değildi, buluttaki bir modele göndermek de seçenek değildi.</p>
           <p><b>Ne yaptım.</b> Etiketleme hattını kurdum. Her biri birkaç gigabayt olan OpenFoodFacts ve OpenBeautyFacts ürün dökümlerini indiriyor ve bellek düşük kalsın diye 100.000 satırlık parçalar hâlinde okuyor. Temizlenen her içerik listesi, aynı makinede Ollama ile çalışan bir Mistral modeline aynı anda birden çok istekle gidiyor ve model sabit bir JSON formatında cevap vermek zorunda. Her cevap etiket sayılmadan önce bir şemaya göre kontrol ediliyor.</p>
@@ -458,7 +461,7 @@
         <div>
           <h3>AI/ML araştırma katkısı, gönüllü</h3>
           <p class="where">TED Üniversitesi araştırma projesi, Ankara</p>
-          <p>Yukarıdaki Alzheimer projesi için stajdaki veri hattını yeni herkese açık kohortlara genişlettim; 3B modelleri eğitiyor ve değerlendiriyorum.</p>
+          <p>Veri hattını daha fazla açık kohorta genişlettim; PET ve MRI üzerinde 3B derin öğrenme modellerini eğitip değerlendiriyorum.</p>
         </div>
       </li>
       <li>
@@ -474,7 +477,7 @@
         <div>
           <h3>Backend ve DevOps stajyeri</h3>
           <p class="where">Bisoft Bilgi Teknolojileri, Ankara</p>
-          <p>Kubernetes üzerinde PostgreSQL yüksek erişilebilirlik; yukarıda anlatıldı.</p>
+          <p>Kubernetes üzerinde PostgreSQL failover’ını otomatikleştirdim; kurtarma süresi 15–30 dakikadan 10 saniyenin altına indi.</p>
         </div>
       </li>
       <li>

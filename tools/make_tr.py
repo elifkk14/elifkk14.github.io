@@ -18,6 +18,20 @@ KEEP = {  # identical in both languages
 }
 
 T = {
+    'Outcome': 'Sonuç',
+    'Built the pipeline that turns raw public-cohort scans into training-ready PET–MRI pairs. First place, Genç Beyinler Yeni Fikirler 2026.':
+        'Açık kohortlardaki ham taramaları eğitime hazır PET–MRI çiftlerine dönüştüren veri hattını kurdum. Genç Beyinler Yeni Fikirler 2026’da birincilik.',
+    '28 of 30 test questions got a cited answer, none with an uncited sentence. Runs in about 190 MB on a free server.':
+        '30 test sorusunun 28’i kaynaklı cevap aldı, hiçbirinde kaynaksız cümle yok. Ücretsiz bir sunucuda yaklaşık 190 MB bellekle çalışıyor.',
+    'Recovery went from 15–30 minutes by hand to under 10 seconds, with no one involved.':
+        'Kurtarma süresi elle 15–30 dakikadan, kimse müdahale etmeden 10 saniyenin altına indi.',
+    'Invalid model answers never become labels: every output passes a schema check first.':
+        'Geçersiz model cevapları asla etikete dönüşmez: her çıktı önce şema kontrolünden geçer.',
+    'Automatic PostgreSQL failover on Kubernetes': 'Kubernetes üzerinde otomatik PostgreSQL failover',
+    'Extended the data pipeline to more public cohorts; train and evaluate 3D deep learning models on PET and MRI.':
+        'Veri hattını daha fazla açık kohorta genişlettim; PET ve MRI üzerinde 3B derin öğrenme modellerini eğitip değerlendiriyorum.',
+    'Automated PostgreSQL failover on Kubernetes; recovery time from 15–30 minutes to under 10 seconds.':
+        'Kubernetes üzerinde PostgreSQL failover’ını otomatikleştirdim; kurtarma süresi 15–30 dakikadan 10 saniyenin altına indi.',
     'Skip to selected work': 'Seçili çalışmalara geç',
     'Intro': 'Giriş',
     'Work': 'Projeler',
