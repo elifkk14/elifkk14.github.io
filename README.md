@@ -10,6 +10,7 @@ Computer Engineering graduate (TED University, 2026), based in Ankara, Türkiye.
 A deliberately simple, dependency-free single page:
 
 - Plain HTML + CSS — no framework, no build step
+- English and Turkish pages (`/` and `/tr/`), linked with `hreflang`
 - No external CSS/JS/font requests; icons and diagrams are inline SVG
 - Light theme only: paper, ink and one signal colour
 - The Alzheimer's project has an animated, step-by-step pipeline drawing (inline SVG + CSS, a few lines of JS; static under reduced motion)
@@ -19,8 +20,10 @@ A deliberately simple, dependency-free single page:
 ## Structure
 
 ```
-index.html    the entire site
-images/       assets
+index.html        the site in English
+tr/index.html     the same page in Turkish (generated from index.html, then reviewed)
+assets/           shared stylesheet and script
+images/, fonts/   images and the self-hosted Inter font
 README.md
 ```
 
